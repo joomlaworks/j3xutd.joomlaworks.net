@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?t=20261010_0641">
+<link rel="stylesheet" href="assets/css/site.css?t=20261010_0645">
 </head>
 <body>
 
@@ -628,7 +628,7 @@
       <div class="card">
         <span class="tag">sqlite · experimental</span>
         <h3>The site in one file</h3>
-        <p>For development, testing and small to medium sites: SQLite handles one write at a time, so busy sites with many simultaneous writers should stay on MySQL/MariaDB. SQLite sites use PHP sessions, so browsing doesn't write to the database.</p>
+        <p>SQLite runs in WAL mode: visitors keep reading while a write happens, and writes queue for their turn instead of failing. Most writes take milliseconds, and SQLite sites keep sessions in PHP, so browsing writes nothing to the database. With caching on, that makes it a practical choice for small to medium sites, not just development and testing. Sites with many simultaneous writers (busy shops, forums) are better on MySQL/MariaDB.</p>
         <div class="code">
           <div class="code-h"><span>move a site to sqlite, and back</span><button class="copy" data-copy="php cli/joomla.php database:convert --to=sqlite">copy</button></div>
           <pre><span class="kw">php</span> cli/joomla.php database:convert --to=sqlite
@@ -807,6 +807,6 @@
   <p id="viewerCaption"></p>
 </dialog>
 
-<script src="assets/js/site.js?t=20261010_0641" defer></script>
+<script src="assets/js/site.js?t=20261010_0645" defer></script>
 </body>
 </html>
