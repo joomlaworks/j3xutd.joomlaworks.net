@@ -102,10 +102,14 @@
   var term=document.getElementById("term"),termTitle=document.getElementById("termTitle"),tabs=document.querySelectorAll(".term-tabs button");
   var cur=0,html="",li=0,timer=null,run=0;
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
-  // As a terminal does, keep the newest line in view
-  function render(extra){term.innerHTML=html+(extra||"")+'<span class="cursor"></span>';term.scrollTop=term.scrollHeight}
+  // As a terminal does, keep the newest line in view, unless the visitor has scrolled up to read
+  function render(extra){
+    var follow=term.scrollHeight-term.scrollTop-term.clientHeight<40;
+    term.innerHTML=html+(extra||"")+'<span class="cursor"></span>';
+    if(follow)term.scrollTop=term.scrollHeight;
+  }
   function show(n){
-    cur=n;html="";li=0;run++;clearTimeout(timer);
+    cur=n;html="";li=0;run++;clearTimeout(timer);term.scrollTop=0;
     termTitle.textContent=SCRIPTS[n].title;
     tabs.forEach(function(b){b.setAttribute("aria-pressed",+b.getAttribute("data-script")===n?"true":"false")});
     if(reduce){SCRIPTS[n].lines.forEach(function(l){html+=l.o?l.o+"\n":'<span class="pr">$</span> '+esc(l.c)+"\n"});render();return}
@@ -114,7 +118,7 @@
   function step(r){
     if(r!==run)return;
     var lines=SCRIPTS[cur].lines;
-    if(li>=lines.length){render('<span class="pr">$</span> ');timer=setTimeout(function(){show((cur+1)%SCRIPTS.length)},6000);return}
+    if(li>=lines.length){render('<span class="pr">$</span> ');timer=setTimeout(function(){show((cur+1)%SCRIPTS.length)},18000);return}
     var l=lines[li++];
     if(l.o){html+=l.o+"\n";render();timer=setTimeout(function(){step(r)},300);return}
     var i=0;(function type(){
