@@ -1,3 +1,5 @@
+/* Joomla 3.x UTD site */
+
 :root,[data-theme="violet"]{--bg:#140f1c;--bg2:#1a1326;--panel:#221932;--line:#382a4f;--text:#ece3f8;--dim:#ad9ec6;--faint:#80709c;--accent:#b77cff;--on-accent:#16082a;--hi:#ff8aa6;--mod:#f0c27a;--low:#9a8bb5;--shadow:rgba(0,0,0,.55)}
 [data-theme="paper"]{--bg:#f3efe6;--bg2:#ebe6db;--panel:#fbf8f2;--line:#d6cfc0;--text:#1d1b17;--dim:#595348;--faint:#7a7366;--accent:#6a2fb0;--on-accent:#f7f2fc;--hi:#b3261e;--mod:#8a5a00;--low:#6b6458;--shadow:rgba(60,40,20,.22)}
 
