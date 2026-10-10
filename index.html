@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?t=20261010_0652">
+<link rel="stylesheet" href="assets/css/site.css?t=20261010_0655">
 </head>
 <body>
 
@@ -26,12 +26,12 @@
     <a class="mark" href="#top" aria-label="Joomla 3.x UTD home"><svg class="logo" viewBox="0 0 350 100" aria-hidden="true"><g font-family="Geist, 'Inter Tight', system-ui, sans-serif" font-weight="700" font-size="66" letter-spacing="-2" fill="currentColor"><text x="2" y="74">J3</text><text x="200" y="74">UTD</text></g><g stroke-width="16" stroke-linecap="round" fill="none"><path d="M130 40 100 10" stroke="#5091cd"/><path d="M150 40 180 10" stroke="#7ac143"/><path d="M150 60 180 90" stroke="#f9a541"/><path d="M130 60 100 90" stroke="#f44321"/></g></svg></a>
     <div class="nav-links">
       <a href="#new">What's new</a>
-      <a href="#security">Security</a>
       <a href="#templates">Templates</a>
       <a href="#demos">Demos</a>
       <a href="#agents">CLI &amp; AI</a>
       <a href="#database">Databases</a>
       <a href="#changelog">Changelog</a>
+      <a href="#security">Security</a>
       <a href="#community">Community</a>
     </div>
     <div class="nav-right">
@@ -146,61 +146,6 @@
         <a class="go" href="#changelog">The changelog →</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="security" class="sec-line">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// security</span>
-        <h2>Security fixes, backported as they land</h2>
-        <p class="lead">Every official Joomla security release is reviewed against this codebase. When the vulnerable code exists in 3.x, it gets fixed here — including issues listed upstream as affecting only Joomla 4.0 and later. And we audit 3.x ourselves: most of v3.17's 22 fixes were in stock Joomla 3 all along.</p>
-      </div>
-      <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Detailed changelog →</a>
-    </div>
-    <div class="cves" id="cves">
-      <div class="cve"><span class="v">v3.17</span><span>Crafted packages could write files outside the site's folders, through Joomla Update's extraction, the extension installer or the archive code; such packages are now refused as a whole</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>Anyone could run the installer again on an installed site while the <code>installation</code> folder remained; now only the browser that installed the site can go on</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>The configuration writer could put PHP code into <code>configuration.php</code> through a crafted setting name</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>The installer's ownership check for remote databases could be skipped by going straight to the step that writes the configuration</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>MySQL (PDO) and PostgreSQL drivers ran several SQL statements given at once; every driver now runs one, like "mysqli"</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span><code>{loadmoduleid}</code> showed any module to anyone, whatever its access level or publishing dates</span><span class="id">Since 3.12</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Setting the Super User's group in the installer could put every user into the Super Users group when the mapping already existed</span><span class="id">Installer</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>The module edit form's ordering list could be read by anyone, listing the titles of the modules in any position</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>FOF's download class read local files (<code>file://</code>) and could write outside the temporary folder</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Query limits and offsets were written into the SQL as passed, on every database driver</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>PostgreSQL connection settings weren't quoted, and the PDO drivers accepted connection settings that could add settings of their own</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Usernames differing only in case could be registered on PostgreSQL</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Joomla Update showed the update feed's values unescaped; Install from URL and Install from Web accepted download addresses other than <code>http</code>/<code>https</code></span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Little WAF now also checks form data and encoded spellings of the tags, and works on servers without <code>REQUEST_URI</code></span><span class="id">Joomla 3.x UTD</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Command line: <code>database:convert</code>'s temporary copy and the backup folders' intermediate levels are now protected from the web</span><span class="id">Joomla 3.x UTD</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Guest account creation via the frontend profile-save action, even with user registration disabled</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Arbitrary directory deletion through a path traversal in the file cache's group handling</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Two XSS-filter bypasses using HTML5 entities and unterminated numeric references</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>SSRF: feed, SEF-domain, user-profile website and custom update URL fields restricted to web URL schemes</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Tagged items in access-restricted categories leaking through tag views and the "Tags - Popular"/"Tags - Similar" modules</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>HTTP header injection via an unescaped filename in the banner-tracking download and the contact vCard export</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>XSS gaps in <code>JHtml::link()</code>/<code>JHtml::iframe()</code>, the module manager's position column, the toolbar link button and the generic image layout's attribute names</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Stored XSS: contact name/position/category echoed unescaped into public-facing schema.org markup</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Missing per-item edit-permission checks in the category and custom-field batch-copy actions</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>A missing access check on the second record of a content history comparison</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>A missing SHTML file extension in the Template Manager's upload blacklist</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Local file inclusion (LFI) via the view layout parameter</span><span class="id">CVE-2026-40383</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>SQL injection in the com_tags "all tags" list ordering</span><span class="id">CVE-2026-352212</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Privilege-escalation XSS via language overrides by non-Super-Users with delegated translation access</span><span class="id">CVE-2026-48954</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>XSS in the template manager's file/image/font editor — three code paths fixed where the official fix covered one</span><span class="id">CVE-2026-48950</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Unescaped attribute output in the generic image layout used by extensions</span><span class="id">CVE-2026-48953</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Reflected XSS in the com_installer update list view</span><span class="id">CVE-2026-48952</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Stored XSS in the content history preview screen</span><span class="id">CVE-2026-30894</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Password/username reset links sent over plain HTTP even on HTTPS-only sites</span><span class="id">CVE-2026-48902</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Access-control bypass allowing anyone to download restricted contacts' vCards in com_contact</span><span class="id">CVE-2026-48948</span></div>
-      <button class="cve-toggle" id="cveToggle" aria-expanded="false">Show more →</button>
-    </div>
-    <div class="callout">
-      <p><b>Little WAF.</b> An opt-in system plugin (since v3.16) that filters known attack signatures against abandoned or historically vulnerable third-party extensions before any component runs, with filters for Sourcerer-style <code>{source}</code> URL injection and Modules Anywhere-style <code>{module}</code>/<code>{modulepos}</code> tags. Since v3.17 it also checks form data and encoded spellings, and each filter only acts while its extension is installed. Disabled by default; more filters will be added over time.</p>
-    </div>
-    <p class="sec-note">Advisories that don't apply — because the vulnerable feature doesn't exist in 3.x — and issues already covered by earlier hardening are documented in the changelog as well.</p>
   </div>
 </section>
 
@@ -711,6 +656,61 @@
   </div>
 </section>
 
+<section id="security" class="sec-line">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">// security</span>
+        <h2>Security fixes, backported as they land</h2>
+        <p class="lead">Every official Joomla security release is reviewed against this codebase. When the vulnerable code exists in 3.x, it gets fixed here — including issues listed upstream as affecting only Joomla 4.0 and later. And we audit 3.x ourselves: most of v3.17's 22 fixes were in stock Joomla 3 all along.</p>
+      </div>
+      <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Detailed changelog →</a>
+    </div>
+    <div class="cves" id="cves">
+      <div class="cve"><span class="v">v3.17</span><span>Crafted packages could write files outside the site's folders, through Joomla Update's extraction, the extension installer or the archive code; such packages are now refused as a whole</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve"><span class="v">v3.17</span><span>Anyone could run the installer again on an installed site while the <code>installation</code> folder remained; now only the browser that installed the site can go on</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve"><span class="v">v3.17</span><span>The configuration writer could put PHP code into <code>configuration.php</code> through a crafted setting name</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve"><span class="v">v3.17</span><span>The installer's ownership check for remote databases could be skipped by going straight to the step that writes the configuration</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve"><span class="v">v3.17</span><span>MySQL (PDO) and PostgreSQL drivers ran several SQL statements given at once; every driver now runs one, like "mysqli"</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve"><span class="v">v3.17</span><span><code>{loadmoduleid}</code> showed any module to anyone, whatever its access level or publishing dates</span><span class="id">Since 3.12</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>Setting the Super User's group in the installer could put every user into the Super Users group when the mapping already existed</span><span class="id">Installer</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>The module edit form's ordering list could be read by anyone, listing the titles of the modules in any position</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>FOF's download class read local files (<code>file://</code>) and could write outside the temporary folder</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>Query limits and offsets were written into the SQL as passed, on every database driver</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>PostgreSQL connection settings weren't quoted, and the PDO drivers accepted connection settings that could add settings of their own</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>Usernames differing only in case could be registered on PostgreSQL</span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>Joomla Update showed the update feed's values unescaped; Install from URL and Install from Web accepted download addresses other than <code>http</code>/<code>https</code></span><span class="id">Stock Joomla 3</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>Little WAF now also checks form data and encoded spellings of the tags, and works on servers without <code>REQUEST_URI</code></span><span class="id">Joomla 3.x UTD</span></div>
+      <div class="cve cve-more"><span class="v">v3.17</span><span>Command line: <code>database:convert</code>'s temporary copy and the backup folders' intermediate levels are now protected from the web</span><span class="id">Joomla 3.x UTD</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>Guest account creation via the frontend profile-save action, even with user registration disabled</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>Arbitrary directory deletion through a path traversal in the file cache's group handling</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>Two XSS-filter bypasses using HTML5 entities and unterminated numeric references</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>SSRF: feed, SEF-domain, user-profile website and custom update URL fields restricted to web URL schemes</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>Tagged items in access-restricted categories leaking through tag views and the "Tags - Popular"/"Tags - Similar" modules</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>HTTP header injection via an unescaped filename in the banner-tracking download and the contact vCard export</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>XSS gaps in <code>JHtml::link()</code>/<code>JHtml::iframe()</code>, the module manager's position column, the toolbar link button and the generic image layout's attribute names</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>Stored XSS: contact name/position/category echoed unescaped into public-facing schema.org markup</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>Missing per-item edit-permission checks in the category and custom-field batch-copy actions</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>A missing access check on the second record of a content history comparison</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.16</span><span>A missing SHTML file extension in the Template Manager's upload blacklist</span><span class="id">Joomla 6.1 / 5.4</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>Local file inclusion (LFI) via the view layout parameter</span><span class="id">CVE-2026-40383</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>SQL injection in the com_tags "all tags" list ordering</span><span class="id">CVE-2026-352212</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>Privilege-escalation XSS via language overrides by non-Super-Users with delegated translation access</span><span class="id">CVE-2026-48954</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>XSS in the template manager's file/image/font editor — three code paths fixed where the official fix covered one</span><span class="id">CVE-2026-48950</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>Unescaped attribute output in the generic image layout used by extensions</span><span class="id">CVE-2026-48953</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>Reflected XSS in the com_installer update list view</span><span class="id">CVE-2026-48952</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>Stored XSS in the content history preview screen</span><span class="id">CVE-2026-30894</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>Password/username reset links sent over plain HTTP even on HTTPS-only sites</span><span class="id">CVE-2026-48902</span></div>
+      <div class="cve cve-more"><span class="v">v3.15</span><span>Access-control bypass allowing anyone to download restricted contacts' vCards in com_contact</span><span class="id">CVE-2026-48948</span></div>
+      <button class="cve-toggle" id="cveToggle" aria-expanded="false">Show more →</button>
+    </div>
+    <div class="callout">
+      <p><b>Little WAF.</b> An opt-in system plugin (since v3.16) that filters known attack signatures against abandoned or historically vulnerable third-party extensions before any component runs, with filters for Sourcerer-style <code>{source}</code> URL injection and Modules Anywhere-style <code>{module}</code>/<code>{modulepos}</code> tags. Since v3.17 it also checks form data and encoded spellings, and each filter only acts while its extension is installed. Disabled by default; more filters will be added over time.</p>
+    </div>
+    <p class="sec-note">Advisories that don't apply — because the vulnerable feature doesn't exist in 3.x — and issues already covered by earlier hardening are documented in the changelog as well.</p>
+  </div>
+</section>
+
 <!-- Testimonials: hidden until there are real ones (remove "hidden" to show the section) -->
 <section id="voices" class="sec-line" hidden>
   <div class="wrap">
@@ -808,6 +808,6 @@
   <p id="viewerCaption"></p>
 </dialog>
 
-<script src="assets/js/site.js?t=20261010_0652" defer></script>
+<script src="assets/js/site.js?t=20261010_0655" defer></script>
 </body>
 </html>
