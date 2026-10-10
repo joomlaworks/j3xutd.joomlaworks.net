@@ -108,17 +108,22 @@
     term.innerHTML=html+(extra||"")+'<span class="cursor"></span>';
     if(follow)term.scrollTop=term.scrollHeight;
   }
-  function show(n){
+  function show(n,auto){
     cur=n;html="";li=0;run++;clearTimeout(timer);term.scrollTop=0;
     termTitle.textContent=SCRIPTS[n].title;
-    tabs.forEach(function(b){b.setAttribute("aria-pressed",+b.getAttribute("data-script")===n?"true":"false")});
+    tabs.forEach(function(b){
+      var on=+b.getAttribute("data-script")===n;
+      b.setAttribute("aria-pressed",on?"true":"false");
+      b.classList.remove("switched");
+      if(on&&auto){void b.offsetWidth;b.classList.add("switched")}
+    });
     if(reduce){SCRIPTS[n].lines.forEach(function(l){html+=l.o?l.o+"\n":'<span class="pr">$</span> '+esc(l.c)+"\n"});render();return}
     step(run);
   }
   function step(r){
     if(r!==run)return;
     var lines=SCRIPTS[cur].lines;
-    if(li>=lines.length){render('<span class="pr">$</span> ');timer=setTimeout(function(){show((cur+1)%SCRIPTS.length)},18000);return}
+    if(li>=lines.length){render('<span class="pr">$</span> ');timer=setTimeout(function(){show((cur+1)%SCRIPTS.length,true)},15000);return}
     var l=lines[li++];
     if(l.o){html+=l.o+"\n";render();timer=setTimeout(function(){step(r)},300);return}
     var i=0;(function type(){
