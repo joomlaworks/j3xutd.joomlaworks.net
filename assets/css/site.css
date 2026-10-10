@@ -134,6 +134,7 @@ a.zoom:hover{text-decoration:none}
 .tpls{margin-top:24px}
 .tpl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:64px;align-items:center;padding:72px 0;border-bottom:1px solid var(--line)}
 .tpl:last-child{border-bottom:0;padding-bottom:0}
+.tpl:nth-child(even){grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}
 .tpl:nth-child(even) .tpl-text{order:2}
 .tpl .kind{font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--accent)}
 .tpl h3{font-size:clamp(30px,3.6vw,44px);letter-spacing:-.03em;line-height:1.05;margin-top:8px}
@@ -148,7 +149,7 @@ a.zoom:hover{text-decoration:none}
 .tpl-thumbs figcaption{margin-top:8px;font-family:"Geist Mono",monospace;font-size:12px;color:var(--faint)}
 .tpl-thumbs .browser::before{height:16px;background-size:auto;background:radial-gradient(circle at 10px 8px,var(--line) 3px,transparent 3.5px),radial-gradient(circle at 20px 8px,var(--line) 3px,transparent 3.5px),radial-gradient(circle at 30px 8px,var(--line) 3px,transparent 3.5px)}
 @media(max-width:980px){
-  .tpl{grid-template-columns:1fr;gap:40px;padding:56px 0}
+  .tpl,.tpl:nth-child(even){grid-template-columns:1fr;gap:40px;padding:56px 0}
   .tpl:nth-child(even) .tpl-text{order:0}
   .tpl-thumbs{max-width:none}
   .phone{right:-8px;width:26%}
@@ -160,8 +161,13 @@ a.zoom:hover{text-decoration:none}
 .tpl-common p{color:var(--dim);font-size:14.5px;margin-top:6px;text-wrap:pretty}
 
 /* install */
-.install-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:56px}
-@media(max-width:980px){.install-grid{grid-template-columns:1fr}}
+/* the two cards with commands stacked on the left, the Joomla Update settings beside them */
+.install-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);grid-template-areas:"ssh web" "fresh web";gap:20px;margin-top:56px}
+.install-ssh{grid-area:ssh}
+.install-fresh{grid-area:fresh}
+.install-web{grid-area:web}
+.install-fresh .btn{align-self:start}
+@media(max-width:980px){.install-grid{grid-template-columns:1fr;grid-template-areas:"web" "ssh" "fresh"}}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .card p{color:var(--dim);font-size:15.5px}
 .card .tag{font-family:"Geist Mono",monospace;font-size:12px;color:var(--accent)}
@@ -175,7 +181,7 @@ a.zoom:hover{text-decoration:none}
 /* code */
 .code{background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0}
 .code-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line);font-family:"Geist Mono",monospace;font-size:12px;color:var(--faint)}
-.code pre{padding:14px 16px;font-size:13px;line-height:1.7;overflow-x:auto;color:var(--text)}
+.code pre{padding:14px 16px;font-size:13px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--text)}
 .code .cm{color:var(--faint)}
 .code .kw{color:var(--accent)}
 .copy{font-family:"Geist Mono",monospace;font-size:12px;color:var(--dim);background:none;border:1px solid var(--line);border-radius:6px;padding:3px 10px;cursor:pointer}
@@ -253,17 +259,6 @@ kbd{font-family:"Geist Mono",monospace;font-size:.85em;border:1px solid var(--li
 .rel ul{list-style:none;display:grid;gap:8px}
 .rel li{color:var(--dim);font-size:15.5px;padding-left:22px;position:relative;text-wrap:pretty}
 .rel li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:"Geist Mono",monospace;font-size:13px;top:2px}
-
-/* numbers */
-.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:56px}
-@media(max-width:980px){.nums{grid-template-columns:1fr}}
-.num-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:16px;min-width:0}
-.num-card .n{font-family:"Geist Mono",monospace;font-size:clamp(40px,5vw,56px);font-weight:600;letter-spacing:-.04em;line-height:1}
-.num-card .l{color:var(--dim);font-size:15px;margin-top:-6px}
-.num-card table{width:100%;border-collapse:collapse;font-family:"Geist Mono",monospace;font-size:13.5px}
-.num-card td{padding:7px 0;border-top:1px solid var(--line);color:var(--dim)}
-.num-card td:last-child{text-align:right;color:var(--text)}
-.num-card .foot{margin-top:auto;font-family:"Geist Mono",monospace;font-size:13.5px}
 
 /* voices */
 .voices{columns:3 300px;column-gap:20px;margin-top:56px}

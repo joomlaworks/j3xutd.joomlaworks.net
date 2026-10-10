@@ -124,11 +124,4 @@
   tabs.forEach(function(b){b.addEventListener("click",function(){show(+b.getAttribute("data-script"))})});
   show(0);
 
-  fetch("https://api.github.com/repos/joomlaworks/joomla-3.x").then(function(r){return r.ok?r.json():null}).then(function(d){
-    if(!d)return;
-    document.getElementById("stars").textContent=d.stargazers_count.toLocaleString();
-    document.getElementById("forks").textContent=d.forks_count.toLocaleString();
-    document.getElementById("issues").textContent=d.open_issues_count.toLocaleString();
-    if(d.subscribers_count!=null)document.getElementById("watchers").textContent=d.subscribers_count.toLocaleString();
-  }).catch(function(){});
 })();
