@@ -1,813 +1,1015 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="violet">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Joomla 3.x UTD — secure, current &amp; still yours</title>
-<meta name="description" content="Joomla 3.x UTD is a community-maintained, up-to-date distribution of Joomla 3.x: backported security fixes, PHP up to 8.5, every major database (MySQL, MariaDB, PostgreSQL, SQL Server, SQLite), three new templates and a command line with a built-in MCP server for AI assistants.">
-<meta name="theme-color" content="#140f1c">
-<meta property="og:title" content="Joomla 3.x UTD — secure, current &amp; still yours">
-<meta property="og:description" content="An up-to-date distribution of Joomla 3.x. v3.17: every major database, three new templates, a new installer, and a command line and MCP server for AI assistants.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://j3xutd.joomlaworks.net/">
-<meta property="og:image" content="https://j3xutd.joomlaworks.net/assets/shots/rookwood-home.webp">
-<link rel="icon" href="assets/logo/j3xutd-mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?t=20261010_0716">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Joomla 3.x UTD — secure, current &amp; still yours</title>
+    <meta name="description" content="Joomla 3.x UTD is a community-maintained, up-to-date distribution of Joomla 3.x: backported security fixes, PHP up to 8.5, every major database (MySQL, MariaDB, PostgreSQL, SQL Server, SQLite), three new templates and a command line with a built-in MCP server for AI assistants.">
+    <meta name="theme-color" content="#140f1c">
+    <meta property="og:title" content="Joomla 3.x UTD — secure, current &amp; still yours">
+    <meta property="og:description" content="An up-to-date distribution of Joomla 3.x. v3.17: every major database, three new templates, a new installer, and a command line and MCP server for AI assistants.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://j3xutd.joomlaworks.net/">
+    <meta property="og:image" content="https://j3xutd.joomlaworks.net/assets/shots/rookwood-home.webp">
+    <link rel="icon" href="assets/logo/j3xutd-mark.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css?t=20261010_0716">
 </head>
+
 <body id="top">
 
-<a class="announce" href="#new"><b>v3.17 is out</b> — every major database, three new templates, a new installer, and a command line &amp; MCP server for AI assistants →</a>
+    <a class="announce" href="#new"><b>v3.17 is out</b> — every major database, three new templates, a new installer, and a command line &amp; MCP server for AI assistants →</a>
 
-<nav class="nav" id="nav">
-  <div class="wrap nav-in">
-    <a class="mark" href="#top" aria-label="Joomla 3.x UTD home"><svg class="logo" viewBox="0 0 350 100" aria-hidden="true"><g font-family="Geist, 'Inter Tight', system-ui, sans-serif" font-weight="700" font-size="66" letter-spacing="-2" fill="currentColor"><text x="2" y="74">J3</text><text x="200" y="74">UTD</text></g><g stroke-width="16" stroke-linecap="round" fill="none"><path d="M130 40 100 10" stroke="#5091cd"/><path d="M150 40 180 10" stroke="#7ac143"/><path d="M150 60 180 90" stroke="#f9a541"/><path d="M130 60 100 90" stroke="#f44321"/></g></svg></a>
-    <div class="nav-links">
-      <a href="#new">What's new</a>
-      <a href="#templates">Templates</a>
-      <a href="#demos">Demos</a>
-      <a href="#agents">CLI &amp; AI</a>
-      <a href="#database">Databases</a>
-      <a href="#changelog">Changelog</a>
-      <a href="#security">Security</a>
-      <a href="#community">Community</a>
-    </div>
-    <div class="nav-right">
-      <button class="icon-btn" id="themeBtn" type="button" title="Toggle light/dark (T)" aria-label="Toggle light or dark theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-      <a class="icon-btn nav-extra" href="https://github.com/joomlaworks/joomla-3.x/releases.atom" title="Releases feed" aria-label="Releases feed" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.5" fill="currentColor"/></svg></a>
-      <a class="icon-btn nav-extra" href="https://github.com/joomlaworks/joomla-3.x" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
-      <a class="btn btn-p btn-sm" href="#install">Install</a>
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
-  </div>
-</nav>
-
-<main>
-
-<header class="hero">
-  <div class="wrap">
-    <h1>Joomla 3.x UTD: secure, current &amp; still yours <span class="by">kept up to date by <a href="https://github.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">the community</a></span></h1>
-    <p class="sub">An up-to-date distribution of Joomla 3.x. Backported security fixes, PHP up to 8.5, every major database, three new templates, and a command line your scripts and AI assistants can drive — plus a drop-in upgrade for the sites you already run.</p>
-    <div class="ctas">
-      <a class="btn btn-p" href="https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip" target="_blank" rel="noopener noreferrer">Download v3.17</a>
-      <a class="btn btn-g" href="#new">See what's new</a>
-    </div>
-    <div class="term" aria-label="Example terminal session">
-      <div class="term-bar"><i></i><i></i><i></i><span id="termTitle">~/sites/new-site — install</span>
-        <div class="term-tabs" role="group" aria-label="Terminal examples">
-          <button type="button" data-script="0" aria-pressed="true">new site</button>
-          <button type="button" data-script="1" aria-pressed="false">upgrade</button>
+    <nav class="nav" id="nav">
+        <div class="wrap nav-in">
+            <a class="mark" href="#top" aria-label="Joomla 3.x UTD home"><svg class="logo" viewBox="0 0 350 100" aria-hidden="true">
+                    <g font-family="Geist, 'Inter Tight', system-ui, sans-serif" font-weight="700" font-size="66" letter-spacing="-2" fill="currentColor"><text x="2" y="74">J3</text><text x="200" y="74">UTD</text></g>
+                    <g stroke-width="16" stroke-linecap="round" fill="none">
+                        <path d="M130 40 100 10" stroke="#5091cd" />
+                        <path d="M150 40 180 10" stroke="#7ac143" />
+                        <path d="M150 60 180 90" stroke="#f9a541" />
+                        <path d="M130 60 100 90" stroke="#f44321" />
+                    </g>
+                </svg></a>
+            <div class="nav-links">
+                <a href="#new">What's new</a>
+                <a href="#templates">Templates</a>
+                <a href="#demos">Demos</a>
+                <a href="#agents">CLI &amp; AI</a>
+                <a href="#database">Databases</a>
+                <a href="#changelog">Changelog</a>
+                <a href="#security">Security</a>
+                <a href="#community">Community</a>
+            </div>
+            <div class="nav-right">
+                <button class="icon-btn" id="themeBtn" type="button" title="Toggle light/dark (T)" aria-label="Toggle light or dark theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                    </svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+                    </svg></button>
+                <a class="icon-btn nav-extra" href="https://github.com/joomlaworks/joomla-3.x/releases.atom" title="Releases feed" aria-label="Releases feed" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14" />
+                        <circle cx="6" cy="18" r="1.5" fill="currentColor" />
+                    </svg></a>
+                <a class="icon-btn nav-extra" href="https://github.com/joomlaworks/joomla-3.x" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z" />
+                    </svg></a>
+                <a class="btn btn-p btn-sm" href="#install">Install</a>
+                <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M4 7h16M4 12h16M4 17h16" />
+                    </svg></button>
+            </div>
         </div>
-      </div>
-      <pre id="term"></pre>
-    </div>
-    <p class="hero-facts"><span><b>1.4 s</b> from command to site, sample data included</span><span><b>0</b> database servers needed (SQLite)</span><span><b>100</b> commands, all with JSON output</span></p>
-  </div>
-</header>
+    </nav>
 
-<section id="new" class="sec-line">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// new in v3.17</span>
-        <h2>The biggest release yet</h2>
-        <p class="lead">Every major database, a new installer, three new templates and a command line built for scripts and AI assistants — on top of <b>22 security fixes</b> and a long list of bugs that stock Joomla 3 never fixed.</p>
-      </div>
-      <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Full changelog →</a>
-    </div>
+    <main>
 
-    <div class="feat-hero">
-      <div>
-        <span class="tag">new sites</span>
-        <h3>A brand new installer</h3>
-        <p>An app-style installer with a sidebar of steps, dark mode and right-to-left support, built with plain HTML, CSS and JavaScript. Same steps as before, every database driver, and it cleans up after itself.</p>
-        <ul>
-          <li>MySQL, MariaDB, PostgreSQL, SQL Server &amp; Azure SQL, and SQLite</li>
-          <li>Three sample data sets, each with its own template: News, Blog and Studio</li>
-          <li>Removes the <code>installation</code> folder for you when you continue to the site</li>
-          <li>Locked once installed: only the browser that installed the site can go on</li>
-        </ul>
-      </div>
-      <a class="zoom browser" href="assets/shots/installer.webp" data-caption="The new installer"><img src="assets/shots/installer.webp" width="1120" height="900" alt="The installer's Main Configuration step: site name and description, Super User details" loading="lazy" decoding="async"></a>
-    </div>
+        <header class="hero">
+            <div class="wrap">
+                <h1>Joomla 3.x UTD: secure, current &amp; still yours <span class="by">kept up to date by <a href="https://github.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">the community</a></span></h1>
+                <p class="sub">An up-to-date distribution of Joomla 3.x. Backported security fixes, PHP up to 8.5, every major database, three new templates, and a command line your scripts and AI assistants can drive — plus a drop-in upgrade for the sites you already run.</p>
+                <div class="ctas">
+                    <a class="btn btn-p" href="https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip" target="_blank" rel="noopener noreferrer">Download v3.17</a>
+                    <a class="btn btn-g" href="#new">See what's new</a>
+                </div>
+                <div class="term" aria-label="Example terminal session">
+                    <div class="term-bar"><i></i><i></i><i></i><span id="termTitle">~/sites/new-site — install</span>
+                        <div class="term-tabs" role="group" aria-label="Terminal examples">
+                            <button type="button" data-script="0" aria-pressed="true">new site</button>
+                            <button type="button" data-script="1" aria-pressed="false">upgrade</button>
+                        </div>
+                    </div>
+                    <pre id="term"></pre>
+                </div>
+                <p class="hero-facts"><span><b>1.4 s</b> from command to site, sample data included</span><span><b>0</b> database servers needed (SQLite)</span><span><b>100</b> commands, all with JSON output</span></p>
+            </div>
+        </header>
 
-    <div class="feats">
-      <div class="feat">
-        <span class="tag">databases</span>
-        <h3>Every major database</h3>
-        <p>MySQL and MariaDB (native &amp; PDO), PostgreSQL (native &amp; PDO, fixed for PHP 8.1+), SQL Server &amp; Azure SQL, all tested. MySQL 8.0, 8.4 and 9.x work on their default authentication, with no <code>my.cnf</code> changes.</p>
-        <a class="go" href="#database">Database support →</a>
-      </div>
-      <div class="feat">
-        <span class="tag">sqlite · experimental</span>
-        <h3>A whole site in one file</h3>
-        <p>The new SQLite driver runs Joomla's and your extensions' MySQL SQL unchanged, through WordPress' emulation layer. Spin up dev sites in seconds, or keep a site in Dropbox and pick it up on another machine.</p>
-        <a class="go" href="#database">SQLite notes →</a>
-      </div>
-      <div class="feat">
-        <span class="tag">frontend</span>
-        <h3>Three new templates</h3>
-        <p>Hammond for news, Finch for blogs and Rookwood for studios and companies. Plain CSS and JavaScript, no jQuery or Bootstrap, built for Core Web Vitals, each with its own sample data.</p>
-        <a class="go" href="#templates">See them →</a>
-      </div>
-      <div class="feat">
-        <span class="tag">cli</span>
-        <h3>A command line for everything</h3>
-        <p><code>cli/joomla.php</code> goes far beyond what Joomla's own command line offers: 100 commands for content, templates, databases, health checks and logs, with JSON output and dry runs everywhere. Users coming from Joomla 4 or newer will find the commands they know under the same names.</p>
-        <a class="go" href="#agents">The command line →</a>
-      </div>
-      <div class="feat">
-        <span class="tag">ai</span>
-        <h3>A built-in MCP server</h3>
-        <p>Claude, ChatGPT, Gemini, Qwen, Kimi, GLM and other AI assistants can work with your site through the Model Context Protocol. Read-only unless you allow more, and every change is logged.</p>
-        <a class="go" href="#agents">How it works →</a>
-      </div>
-      <div class="feat">
-        <span class="tag">editor</span>
-        <h3>TinyMCE 8</h3>
-        <p>The latest TinyMCE is the default editor of new sites: image uploads by dropping or pasting, a toolbar builder per user group, 61 languages. TinyMCE 4 stays as "legacy" for existing sites.</p>
-      </div>
-      <div class="feat">
-        <span class="tag">administrator</span>
-        <h3>Quality of life</h3>
-        <p>A new responsive login page, one-click Clean Cache in the status bar (plus Clean Everything and Global Check-in for administrators), Install from Web back as the first tab, and Help buttons that work again.</p>
-      </div>
-      <div class="feat">
-        <span class="tag">updates</span>
-        <h3>What's new, in the backend</h3>
-        <p>Post-installation Messages now tell the story of this distribution, one message per release since v3.11, instead of stock Joomla's notes from the 3.2–3.10 era.</p>
-      </div>
-      <div class="feat">
-        <span class="tag">php 8.5</span>
-        <h3>Thousands of fixes</h3>
-        <p>Long-standing bugs in the API sorted, database errors handled as Joomla expects on PHP 8.1+, and every PHP deprecation we could find removed — including thousands while Smart Search indexes.</p>
-        <a class="go" href="#changelog">The changelog →</a>
-      </div>
-    </div>
-  </div>
-</section>
+        <section id="new" class="sec-line">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <span class="eyebrow">// new in v3.17</span>
+                        <h2>The biggest release yet</h2>
+                        <p class="lead">Every major database, a new installer, three new templates and a command line built for scripts and AI assistants — on top of <b>22 security fixes</b> and a long list of bugs that stock Joomla 3 never got the time to have it fixed.</p>
+                    </div>
+                    <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Full changelog →</a>
+                </div>
 
-<section id="templates" class="sec-line">
-  <div class="wrap">
-    <span class="eyebrow">// templates</span>
-    <h2>Three new templates, ready on day one</h2>
-    <p class="lead">Each template comes with a sample data set made for it, so a new site looks finished the moment it's installed. Pick a set in the installer, with <code>core:install --sample-data=…</code>, or switch sets later from the Control Panel. All three use core Joomla extensions only.</p>
+                <div class="feat-hero">
+                    <div>
+                        <span class="tag">new sites</span>
+                        <h3>A brand new installer</h3>
+                        <p>An app-style installer with a sidebar of steps, dark mode and right-to-left support, built with plain HTML, CSS and JavaScript. Same steps as before, every database driver, and it cleans up after itself.</p>
+                        <ul>
+                            <li>MySQL, MariaDB, PostgreSQL, SQL Server &amp; Azure SQL, and SQLite</li>
+                            <li>Three sample data sets, each with its own template: News, Blog and Studio</li>
+                            <li>Removes the <code>installation</code> folder for you when you continue to the site</li>
+                            <li>Locked once installed: only the browser that installed the site can go on</li>
+                        </ul>
+                    </div>
+                    <a class="zoom browser" href="assets/shots/installer.webp" data-caption="The new installer"><img src="assets/shots/installer.webp" width="1120" height="900" alt="The installer's Main Configuration step: site name and description, Super User details" loading="lazy" decoding="async"></a>
+                </div>
 
-    <div class="tpls">
-      <article class="tpl">
-        <div class="tpl-text">
-          <span class="kind">news portals &amp; magazines</span>
-          <h3>Hammond</h3>
-          <p>A newspaper front page built from modules: a lead story, latest news, sections, opinion and most read, on a 12-column grid you arrange from the Module Manager.</p>
-          <ul>
-            <li>Sticky header with a combined menu and search panel</li>
-            <li>List, article and info page layouts, with share popups</li>
-            <li>Sized for readability, print-ready articles on A4</li>
-          </ul>
-          <p class="set"><b>News sample data:</b> 227 articles in ten sections, with tags, menus, modules, images, videos and posts. <code>--sample-data=news</code></p>
-          <a class="btn btn-g btn-sm demo-link" href="https://j3xutd-demos.joomlaworks.net/hammond/" target="_blank" rel="noopener noreferrer">Live demo →</a>
-        </div>
-        <div>
-          <div class="tpl-stage">
-            <a class="zoom browser" href="assets/shots/hammond-home.webp" data-caption="Hammond — home page"><img src="assets/shots/hammond-home.webp" width="1440" height="900" alt="Hammond's home page: a lead story with a large image, latest news and sections" loading="lazy" decoding="async"></a>
-            <a class="zoom phone" href="assets/shots/hammond-phone.webp" data-caption="Hammond — on a phone"><img src="assets/shots/hammond-phone.webp" width="780" height="1688" alt="Hammond on a phone" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="tpl-thumbs">
-            <figure><a class="zoom browser" href="assets/shots/hammond-article.webp" data-caption="Hammond — an article"><img src="assets/shots/hammond-article.webp" width="1440" height="900" alt="An article in Hammond with its byline, share links and the most read list" loading="lazy" decoding="async"></a><figcaption>an article</figcaption></figure>
-          </div>
-        </div>
-      </article>
+                <div class="feats">
+                    <div class="feat">
+                        <span class="tag">databases</span>
+                        <h3>Every major database</h3>
+                        <p>MySQL and MariaDB (native &amp; PDO), PostgreSQL (native &amp; PDO, fixed for PHP 8.1+), SQL Server &amp; Azure SQL, all tested. MySQL 8.0, 8.4 and 9.x work on their default authentication, with no <code>my.cnf</code> changes.</p>
+                        <a class="go" href="#database">Database support →</a>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">sqlite · experimental</span>
+                        <h3>A whole site in one file</h3>
+                        <p>The new SQLite driver runs Joomla's and your extensions' MySQL SQL unchanged, through WordPress' emulation layer. Spin up dev sites in seconds, or keep a site in Dropbox and pick it up on another machine.</p>
+                        <a class="go" href="#database">SQLite notes →</a>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">frontend</span>
+                        <h3>Three new templates</h3>
+                        <p>Hammond for news, Finch for blogs and Rookwood for studios and companies. Plain CSS and JavaScript, no jQuery or Bootstrap, built for Core Web Vitals, each with its own sample data.</p>
+                        <a class="go" href="#templates">See them →</a>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">cli</span>
+                        <h3>A command line for everything</h3>
+                        <p><code>cli/joomla.php</code> goes far beyond what Joomla's own command line offers: 100 commands for content, templates, databases, health checks and logs, with JSON output and dry runs everywhere. Users coming from Joomla 4 or newer will find the commands they know under the same names.</p>
+                        <a class="go" href="#agents">The command line →</a>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">ai</span>
+                        <h3>A built-in MCP server</h3>
+                        <p>Claude, ChatGPT, Gemini, Qwen, Kimi, GLM and other AI assistants can work with your site through the Model Context Protocol. Read-only unless you allow more, and every change is logged.</p>
+                        <a class="go" href="#agents">How it works →</a>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">editor</span>
+                        <h3>TinyMCE 8</h3>
+                        <p>The latest TinyMCE is the default editor of new sites: image uploads by dropping or pasting, a toolbar builder per user group, 61 languages. TinyMCE 4 stays as "legacy" for existing sites.</p>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">administrator</span>
+                        <h3>Quality of life</h3>
+                        <p>A new responsive login page, one-click Clean Cache in the status bar (plus Clean Everything and Global Check-in for administrators), Install from Web back as the first tab, and Help buttons that work again.</p>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">updates</span>
+                        <h3>What's new, in the backend</h3>
+                        <p>Post-installation Messages now tell the story of this distribution, one message per release since v3.11, instead of stock Joomla's notes from the 3.2–3.10 era.</p>
+                    </div>
+                    <div class="feat">
+                        <span class="tag">php 8.5</span>
+                        <h3>Thousands of fixes</h3>
+                        <p>Long-standing bugs in the API sorted, database errors handled as Joomla expects on PHP 8.1+, and every PHP deprecation we could find removed — including thousands while Smart Search indexes.</p>
+                        <a class="go" href="#changelog">The changelog →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <article class="tpl">
-        <div class="tpl-text">
-          <span class="kind">blogs &amp; personal sites</span>
-          <h3>Finch</h3>
-          <p>A colourful journal: a greeting set large on the home page, posts one after another with the newest on a band of colour, and a calm reading column for every post.</p>
-          <ul>
-            <li>Every topic in its own colour, chosen with a menu item's Page Class</li>
-            <li>Light, dark, or as the visitor's device is set</li>
-            <li>Square shapes, very large type, and date stamps</li>
-          </ul>
-          <p class="set"><b>Blog sample data:</b> 20 essays by one author in four topics, with tags, pages and sidebar modules. <code>--sample-data=blog</code></p>
-          <a class="btn btn-g btn-sm demo-link" href="https://j3xutd-demos.joomlaworks.net/finch/" target="_blank" rel="noopener noreferrer">Live demo →</a>
-        </div>
-        <div>
-          <div class="tpl-stage">
-            <a class="zoom browser" href="assets/shots/finch-home.webp" data-caption="Finch — home page"><img src="assets/shots/finch-home.webp" width="1440" height="900" alt="Finch's home page: the greeting “Hi, I'm Finch.” over the newest post on a mint band" loading="lazy" decoding="async"></a>
-            <a class="zoom phone" href="assets/shots/finch-phone.webp" data-caption="Finch — on a phone"><img src="assets/shots/finch-phone.webp" width="780" height="1688" alt="Finch on a phone" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="tpl-thumbs">
-            <figure><a class="zoom browser" href="assets/shots/finch-home-dark.webp" data-caption="Finch — dark scheme"><img src="assets/shots/finch-home-dark.webp" width="1440" height="900" alt="Finch's home page in its dark colour scheme" loading="lazy" decoding="async"></a><figcaption>dark scheme</figcaption></figure>
-            <figure><a class="zoom browser" href="assets/shots/finch-post.webp" data-caption="Finch — a post"><img src="assets/shots/finch-post.webp" width="1440" height="900" alt="A post in Finch with a coloured header in its topic's colour" loading="lazy" decoding="async"></a><figcaption>a post</figcaption></figure>
-          </div>
-        </div>
-      </article>
+        <section id="templates" class="sec-line">
+            <div class="wrap">
+                <span class="eyebrow">// templates</span>
+                <h2>Three new templates, ready on day one</h2>
+                <p class="lead">Each template comes with a sample data set made for it, so a new site looks finished the moment it's installed. Pick a set in the installer, with <code>core:install --sample-data=…</code>, or switch sets later from the Control Panel. All three use core Joomla extensions only.</p>
 
-      <article class="tpl">
-        <div class="tpl-text">
-          <span class="kind">studios, agencies &amp; companies</span>
-          <h3>Rookwood</h3>
-          <p>A bold presentation site: full-width sections, large type and vivid colours, with solid-edged buttons and cards, organic shapes and curved section edges.</p>
-          <ul>
-            <li>Dark and light themes, with a switch for visitors</li>
-            <li>Showcase and Mosaic layouts for case studies and journals</li>
-            <li>Full-width sections from any module, styled by class</li>
-          </ul>
-          <p class="set"><b>Studio sample data:</b> 9 case studies, 16 journal posts, studio and contact pages, and a home page of sections. <code>--sample-data=studio</code></p>
-          <a class="btn btn-g btn-sm demo-link" href="https://j3xutd-demos.joomlaworks.net/rookwood/" target="_blank" rel="noopener noreferrer">Live demo →</a>
-        </div>
-        <div>
-          <div class="tpl-stage">
-            <a class="zoom browser" href="assets/shots/rookwood-home.webp" data-caption="Rookwood — home page"><img src="assets/shots/rookwood-home.webp" width="1440" height="900" alt="Rookwood's home page: “We design and build bold digital things.” over a dark architectural photo" loading="lazy" decoding="async"></a>
-            <a class="zoom phone" href="assets/shots/rookwood-phone.webp" data-caption="Rookwood — on a phone"><img src="assets/shots/rookwood-phone.webp" width="780" height="1688" alt="Rookwood on a phone" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="tpl-thumbs">
-            <figure><a class="zoom browser" href="assets/shots/rookwood-work.webp" data-caption="Rookwood — case studies (Showcase layout)"><img src="assets/shots/rookwood-work.webp" width="1440" height="900" alt="Rookwood's Work page: case studies in the Showcase layout" loading="lazy" decoding="async"></a><figcaption>showcase layout</figcaption></figure>
-            <figure><a class="zoom browser" href="assets/shots/rookwood-journal.webp" data-caption="Rookwood — journal (Mosaic layout, light theme)"><img src="assets/shots/rookwood-journal.webp" width="1440" height="900" alt="Rookwood's Journal in the Mosaic layout, light theme" loading="lazy" decoding="async"></a><figcaption>mosaic layout, light theme</figcaption></figure>
-          </div>
-        </div>
-      </article>
-    </div>
+                <div class="tpls">
+                    <article class="tpl">
+                        <div class="tpl-text">
+                            <span class="kind">news portals &amp; magazines</span>
+                            <h3>Hammond</h3>
+                            <p>A newspaper front page built from modules: a lead story, latest news, sections, opinion and most read, on a 12-column grid you arrange from the Module Manager.</p>
+                            <ul>
+                                <li>Sticky header with a combined menu and search panel</li>
+                                <li>List, article and info page layouts, with share popups</li>
+                                <li>Sized for readability, print-ready articles on A4</li>
+                            </ul>
+                            <p class="set"><b>News sample data:</b> 227 articles in ten sections, with tags, menus, modules, images, videos and posts. <code>--sample-data=news</code></p>
+                            <a class="btn btn-g btn-sm demo-link" href="https://j3xutd-demos.joomlaworks.net/hammond/" target="_blank" rel="noopener noreferrer">Live demo →</a>
+                        </div>
+                        <div>
+                            <div class="tpl-stage">
+                                <a class="zoom browser" href="assets/shots/hammond-home.webp" data-caption="Hammond — home page"><img src="assets/shots/hammond-home.webp" width="1440" height="900" alt="Hammond's home page: a lead story with a large image, latest news and sections" loading="lazy" decoding="async"></a>
+                                <a class="zoom phone" href="assets/shots/hammond-phone.webp" data-caption="Hammond — on a phone"><img src="assets/shots/hammond-phone.webp" width="780" height="1688" alt="Hammond on a phone" loading="lazy" decoding="async"></a>
+                            </div>
+                            <div class="tpl-thumbs">
+                                <figure><a class="zoom browser" href="assets/shots/hammond-article.webp" data-caption="Hammond — an article"><img src="assets/shots/hammond-article.webp" width="1440" height="900" alt="An article in Hammond with its byline, share links and the most read list" loading="lazy" decoding="async"></a>
+                                    <figcaption>an article</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
 
-    <div class="tpl-common">
-      <div><h4>Fast by design</h4><p>Plain CSS and JavaScript, system fonts and SVG icons. No jQuery, Bootstrap or MooTools on their pages, and lazy images below the top of each view.</p></div>
-      <div><h4>The editor matches</h4><p>Each template's <code>editor.css</code> shows articles in the editor with the site's fonts, colours and layout.</p></div>
-      <div><h4>Yours to adjust</h4><p>Put your own CSS in <code>css/custom.css</code>: updates never touch it. Copies of the templates keep working.</p></div>
-      <div><h4>Switch sets anytime</h4><p>Super Users can swap sample data sets from the Control Panel, as if the site had been installed with that set.</p></div>
-    </div>
-  </div>
-</section>
+                    <article class="tpl">
+                        <div class="tpl-text">
+                            <span class="kind">blogs &amp; personal sites</span>
+                            <h3>Finch</h3>
+                            <p>A colourful journal: a greeting set large on the home page, posts one after another with the newest on a band of colour, and a calm reading column for every post.</p>
+                            <ul>
+                                <li>Every topic in its own colour, chosen with a menu item's Page Class</li>
+                                <li>Light, dark, or as the visitor's device is set</li>
+                                <li>Square shapes, very large type, and date stamps</li>
+                            </ul>
+                            <p class="set"><b>Blog sample data:</b> 20 essays by one author in four topics, with tags, pages and sidebar modules. <code>--sample-data=blog</code></p>
+                            <a class="btn btn-g btn-sm demo-link" href="https://j3xutd-demos.joomlaworks.net/finch/" target="_blank" rel="noopener noreferrer">Live demo →</a>
+                        </div>
+                        <div>
+                            <div class="tpl-stage">
+                                <a class="zoom browser" href="assets/shots/finch-home.webp" data-caption="Finch — home page"><img src="assets/shots/finch-home.webp" width="1440" height="900" alt="Finch's home page: the greeting “Hi, I'm Finch.” over the newest post on a mint band" loading="lazy" decoding="async"></a>
+                                <a class="zoom phone" href="assets/shots/finch-phone.webp" data-caption="Finch — on a phone"><img src="assets/shots/finch-phone.webp" width="780" height="1688" alt="Finch on a phone" loading="lazy" decoding="async"></a>
+                            </div>
+                            <div class="tpl-thumbs">
+                                <figure><a class="zoom browser" href="assets/shots/finch-home-dark.webp" data-caption="Finch — dark scheme"><img src="assets/shots/finch-home-dark.webp" width="1440" height="900" alt="Finch's home page in its dark colour scheme" loading="lazy" decoding="async"></a>
+                                    <figcaption>dark scheme</figcaption>
+                                </figure>
+                                <figure><a class="zoom browser" href="assets/shots/finch-post.webp" data-caption="Finch — a post"><img src="assets/shots/finch-post.webp" width="1440" height="900" alt="A post in Finch with a coloured header in its topic's colour" loading="lazy" decoding="async"></a>
+                                    <figcaption>a post</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
 
-<section id="demos" class="sec-line">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// live demos</span>
-        <h2>Click around before you install</h2>
-        <p class="lead">Each template runs live with its sample data, exactly as a new site gets it from the installer.</p>
-      </div>
-    </div>
-    <div class="demos">
-      <a class="demo" href="https://j3xutd-demos.joomlaworks.net/hammond/" target="_blank" rel="noopener noreferrer">
-        <span class="browser"><img src="assets/shots/hammond-home.webp" width="1440" height="900" alt="" loading="lazy" decoding="async"></span>
-        <span class="demo-body"><span class="kind">news &amp; magazines</span><b>Hammond</b><span class="go">Open the demo →</span></span>
-      </a>
-      <a class="demo" href="https://j3xutd-demos.joomlaworks.net/finch/" target="_blank" rel="noopener noreferrer">
-        <span class="browser"><img src="assets/shots/finch-home.webp" width="1440" height="900" alt="" loading="lazy" decoding="async"></span>
-        <span class="demo-body"><span class="kind">blogs &amp; personal sites</span><b>Finch</b><span class="go">Open the demo →</span></span>
-      </a>
-      <a class="demo" href="https://j3xutd-demos.joomlaworks.net/rookwood/" target="_blank" rel="noopener noreferrer">
-        <span class="browser"><img src="assets/shots/rookwood-home.webp" width="1440" height="900" alt="" loading="lazy" decoding="async"></span>
-        <span class="demo-body"><span class="kind">studios &amp; companies</span><b>Rookwood</b><span class="go">Open the demo →</span></span>
-      </a>
-    </div>
-  </div>
-</section>
+                    <article class="tpl">
+                        <div class="tpl-text">
+                            <span class="kind">studios, agencies &amp; companies</span>
+                            <h3>Rookwood</h3>
+                            <p>A bold presentation site: full-width sections, large type and vivid colours, with solid-edged buttons and cards, organic shapes and curved section edges.</p>
+                            <ul>
+                                <li>Dark and light themes, with a switch for visitors</li>
+                                <li>Showcase and Mosaic layouts for case studies and journals</li>
+                                <li>Full-width sections from any module, styled by class</li>
+                            </ul>
+                            <p class="set"><b>Studio sample data:</b> 9 case studies, 16 journal posts, studio and contact pages, and a home page of sections. <code>--sample-data=studio</code></p>
+                            <a class="btn btn-g btn-sm demo-link" href="https://j3xutd-demos.joomlaworks.net/rookwood/" target="_blank" rel="noopener noreferrer">Live demo →</a>
+                        </div>
+                        <div>
+                            <div class="tpl-stage">
+                                <a class="zoom browser" href="assets/shots/rookwood-home.webp" data-caption="Rookwood — home page"><img src="assets/shots/rookwood-home.webp" width="1440" height="900" alt="Rookwood's home page: “We design and build bold digital things.” over a dark architectural photo" loading="lazy" decoding="async"></a>
+                                <a class="zoom phone" href="assets/shots/rookwood-phone.webp" data-caption="Rookwood — on a phone"><img src="assets/shots/rookwood-phone.webp" width="780" height="1688" alt="Rookwood on a phone" loading="lazy" decoding="async"></a>
+                            </div>
+                            <div class="tpl-thumbs">
+                                <figure><a class="zoom browser" href="assets/shots/rookwood-work.webp" data-caption="Rookwood — case studies (Showcase layout)"><img src="assets/shots/rookwood-work.webp" width="1440" height="900" alt="Rookwood's Work page: case studies in the Showcase layout" loading="lazy" decoding="async"></a>
+                                    <figcaption>showcase layout</figcaption>
+                                </figure>
+                                <figure><a class="zoom browser" href="assets/shots/rookwood-journal.webp" data-caption="Rookwood — journal (Mosaic layout, light theme)"><img src="assets/shots/rookwood-journal.webp" width="1440" height="900" alt="Rookwood's Journal in the Mosaic layout, light theme" loading="lazy" decoding="async"></a>
+                                    <figcaption>mosaic layout, light theme</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
-<section id="about" class="sec-line">
-  <div class="wrap about-grid">
-    <div>
-      <span class="eyebrow">// why we built this project</span>
-      <h2>Official support ended. <span class="typed" id="typed">We kept going.</span></h2>
-      <p class="lead">According to <a href="https://w3techs.com/technologies/details/cm-joomla" target="_blank" rel="noopener noreferrer">market share estimates</a> (as of May 2026), Joomla 3.x is currently used on <b>more than 50% of all installed Joomla sites</b> worldwide. However, official support for Joomla 3.x ended in February 2025 (counting the eLTS program).</p>
-      <p class="lead">So we're actively developing Joomla 3.x UTD as an up-to-date distribution of the Joomla 3.x content management system, built to ensure code security, support modern PHP &amp; MySQL/MariaDB versions &amp; fix any broken behaviour that never got sorted before the release of newer major versions of Joomla.</p>
-    </div>
-    <figure class="quote">
-      <span class="qm">“</span>
-      <blockquote>Half of all Joomla sites still run 3.x, and their owners shouldn't have to choose between rebuilding everything and running unpatched code. Joomla 3.x UTD keeps those sites secure and current, breathes new life into them with enhancements that matter and gives new projects a fast, simple CMS to start from.</blockquote>
-      <figcaption class="who"><img class="avatar" src="assets/img/fotis-evangelou.webp" width="48" height="48" alt=""><span><b>Fotis Evangelou</b>Maintainer · JoomlaWorks</span></figcaption>
-    </figure>
-  </div>
-</section>
+                <div class="tpl-common">
+                    <div>
+                        <h4>Fast by design</h4>
+                        <p>Plain CSS and JavaScript, system fonts and SVG icons. No jQuery, Bootstrap or MooTools on their pages, and lazy images below the top of each view.</p>
+                    </div>
+                    <div>
+                        <h4>The editor matches</h4>
+                        <p>Each template's <code>editor.css</code> shows articles in the editor with the site's fonts, colours and layout.</p>
+                    </div>
+                    <div>
+                        <h4>Yours to adjust</h4>
+                        <p>Put your own CSS in <code>css/custom.css</code>: updates never touch it. Copies of the templates keep working.</p>
+                    </div>
+                    <div>
+                        <h4>Switch sets anytime</h4>
+                        <p>Super Users can swap sample data sets from the Control Panel, as if the site had been installed with that set.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="install" class="sec-line">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// install</span>
-        <h2>Upgrade in place. Or start fresh.</h2>
-        <p class="lead">One rolling release, one download path that never changes. Point your backend at our update feed, extract on top of an existing Joomla 3.x site, or install a new one in about a second.</p>
-      </div>
-      <a class="more" href="https://github.com/joomlaworks/joomla-3.x#readme" target="_blank" rel="noopener noreferrer">Full guide on GitHub →</a>
-    </div>
-    <div class="install-grid">
-      <div class="card install-web">
-        <span class="tag">existing sites · web ui</span>
-        <h3>Joomla Update component</h3>
-        <p>In the backend, open the Joomla Update options (or Global Configuration) and use these settings. Refresh, and the latest release shows up.</p>
-        <dl class="kv">
-          <div><dt>Update Channel</dt><dd>Custom URL</dd></div>
-          <div><dt>Min. Stability</dt><dd>Stable</dd></div>
-        </dl>
-        <div class="code">
-          <div class="code-h"><span>custom url</span><button class="copy" data-copy="https://joomlaworks.github.io/joomla-3.x/list.xml">copy</button></div>
-          <pre>https://joomlaworks.github.io/joomla-3.x/list.xml</pre>
-        </div>
-        <p class="foot">Future updates appear there too, with super admin notifications if enabled.</p>
-      </div>
-      <div class="card install-ssh">
-        <span class="tag">existing sites · cli</span>
-        <h3>One-liner over SSH</h3>
-        <p>On a typical Linux server, <code>cd</code> into your Joomla site's folder and run:</p>
-        <div class="code">
-          <div class="code-h"><span>bash</span><button class="copy" data-copy="wget -qO- https://github.com/joomlaworks/joomla-3.x/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 &amp;&amp; rm -rf installation .github .gitignore *.md">copy</button></div>
-          <pre><span class="kw">wget</span> -qO- https://github.com/joomlaworks/joomla-3.x/archive/refs/heads/main.tar.gz | <span class="kw">tar</span> -xz --strip-components=1 &amp;&amp; <span class="kw">rm</span> -rf installation .github .gitignore *.md</pre>
-        </div>
-        <p class="foot">Extracting the zip manually? Remember to remove the <code>/installation</code> folder afterwards.</p>
-      </div>
-      <div class="card install-fresh">
-        <span class="tag">new sites</span>
-        <h3>Fresh install</h3>
-        <p>Extract the latest rolling release where you want the site to be and open it in a browser, or install from the command line on SQLite (PHP 7.4+ with <code>pdo_sqlite</code>), in an empty folder:</p>
-        <div class="code">
-          <div class="code-h"><span>bash</span><button class="copy" data-copy='wget -q https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip &amp;&amp; unzip -q joomla-latest.zip &amp;&amp; rm joomla-latest.zip &amp;&amp; php cli/joomla.php core:install --site-name="My Site" --admin-email=me@example.com --admin-username=admin'>copy</button></div>
-          <pre><span class="kw">wget</span> -q https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip &amp;&amp; <span class="kw">unzip</span> -q joomla-latest.zip &amp;&amp; <span class="kw">rm</span> joomla-latest.zip &amp;&amp; <span class="kw">php</span> cli/joomla.php core:install --site-name="My Site" --admin-email=me@example.com --admin-username=admin</pre>
-        </div>
-        <a class="btn btn-p" href="https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip" target="_blank" rel="noopener noreferrer">Download joomla-latest.zip</a>
-        <p class="foot">Add <code>--sample-data=news</code>, <code>blog</code> or <code>studio</code>. Built and tested for Linux/BSD; XAMPP or MAMP should work, but aren't tested.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <section id="demos" class="sec-line">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <span class="eyebrow">// live demos</span>
+                        <h2>Click around before you install</h2>
+                        <p class="lead">Each template runs live with its sample data, exactly as a new site gets it from the installer.</p>
+                    </div>
+                </div>
+                <div class="demos">
+                    <a class="demo" href="https://j3xutd-demos.joomlaworks.net/hammond/" target="_blank" rel="noopener noreferrer">
+                        <span class="browser"><img src="assets/shots/hammond-home.webp" width="1440" height="900" alt="" loading="lazy" decoding="async"></span>
+                        <span class="demo-body"><span class="kind">news &amp; magazines</span><b>Hammond</b><span class="go">Open the demo →</span></span>
+                    </a>
+                    <a class="demo" href="https://j3xutd-demos.joomlaworks.net/finch/" target="_blank" rel="noopener noreferrer">
+                        <span class="browser"><img src="assets/shots/finch-home.webp" width="1440" height="900" alt="" loading="lazy" decoding="async"></span>
+                        <span class="demo-body"><span class="kind">blogs &amp; personal sites</span><b>Finch</b><span class="go">Open the demo →</span></span>
+                    </a>
+                    <a class="demo" href="https://j3xutd-demos.joomlaworks.net/rookwood/" target="_blank" rel="noopener noreferrer">
+                        <span class="browser"><img src="assets/shots/rookwood-home.webp" width="1440" height="900" alt="" loading="lazy" decoding="async"></span>
+                        <span class="demo-body"><span class="kind">studios &amp; companies</span><b>Rookwood</b><span class="go">Open the demo →</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<section id="agents" class="sec-line">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// command line &amp; ai</span>
-        <h2>A CMS your scripts and AI assistants can drive</h2>
-        <p class="lead">A command line built for automation from the ground up: 100 commands covering content, templates, databases, health checks and logs, every one with JSON output and dry runs. The built-in MCP server lets AI assistants such as Claude, ChatGPT or Gemini work with your site for you. Where Joomla 4 or newer has a command, ours keeps its name, so their users feel right at home.</p>
-      </div>
-      <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/AI-GUIDE.md" target="_blank" rel="noopener noreferrer">AI &amp; CLI guide →</a>
-    </div>
-    <div class="agent-grid">
-      <ul class="agent-list">
-        <li><b>Full content management</b><span>Articles, categories, tags, modules and menu items: list, create, change, publish, trash and delete, saved as the administrator saves them, acting as an account whose permissions apply (<code>--as</code>).</span></li>
-        <li><b>Templates, databases, health</b><span>Template files and options with undoable changes and backups, <code>database:convert</code> between MySQL, PostgreSQL and SQLite in any direction, <code>site:health</code>, logs and the action log.</span></li>
-        <li><b>Safe by default</b><span>Dry runs on every command that changes something. The MCP server is read-only unless you add <code>--allow-write</code>; anything that puts code on the server also needs <code>--allow-code</code>.</span></li>
-        <li><b>Traceable</b><span>Every change is recorded in the User Actions Log, as made through the command line or MCP. Secrets are masked, and server file paths are never offered to the assistant.</span></li>
-      </ul>
-      <div class="agent-code">
-        <div class="code">
-          <div class="code-h"><span>connect claude code</span><button class="copy" data-copy="claude mcp add joomla -- php /path/to/site/cli/joomla.php mcp:serve">copy</button></div>
-          <pre><span class="kw">claude</span> mcp add joomla -- <span class="kw">php</span> /path/to/site/cli/joomla.php mcp:serve
+        <section id="about" class="sec-line">
+            <div class="wrap about-grid">
+                <div>
+                    <span class="eyebrow">// why we built this project</span>
+                    <h2>Official support ended. <span class="typed" id="typed">We kept going.</span></h2>
+                    <p class="lead">According to <a href="https://w3techs.com/technologies/details/cm-joomla" target="_blank" rel="noopener noreferrer">market share estimates</a> (as of May 2026), Joomla 3.x is currently used on <b>more than 50% of all installed Joomla sites</b> worldwide. However, official support for Joomla 3.x ended in February 2025 (counting the eLTS program).</p>
+                    <p class="lead">So we're actively developing Joomla 3.x UTD as an up-to-date distribution of the Joomla 3.x content management system, built to ensure code security, support modern PHP &amp; MySQL/MariaDB versions &amp; fix any broken behaviour that never got sorted before the release of newer major versions of Joomla.</p>
+                </div>
+                <figure class="quote">
+                    <span class="qm">“</span>
+                    <blockquote>Half of all Joomla sites still run 3.x, and their owners shouldn't have to choose between rebuilding everything and running unpatched code. Joomla 3.x UTD keeps those sites secure and current, breathes new life into them with enhancements that matter and gives new projects a fast, simple CMS to start from.</blockquote>
+                    <figcaption class="who"><img class="avatar" src="assets/img/fotis-evangelou.webp" width="48" height="48" alt=""><span><b>Fotis Evangelou</b>Maintainer · JoomlaWorks</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="install" class="sec-line">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <span class="eyebrow">// install</span>
+                        <h2>Upgrade in place. Or start fresh.</h2>
+                        <p class="lead">One rolling release, one download path that never changes. Point your backend at our update feed, extract on top of an existing Joomla 3.x site, or install a new one in about a second.</p>
+                    </div>
+                    <a class="more" href="https://github.com/joomlaworks/joomla-3.x#readme" target="_blank" rel="noopener noreferrer">Full guide on GitHub →</a>
+                </div>
+                <div class="install-grid">
+                    <div class="card install-web">
+                        <span class="tag">existing sites · web ui</span>
+                        <h3>Joomla Update component</h3>
+                        <p>In the backend, open the Joomla Update options (or Global Configuration) and use these settings. Refresh, and the latest release shows up.</p>
+                        <dl class="kv">
+                            <div>
+                                <dt>Update Channel</dt>
+                                <dd>Custom URL</dd>
+                            </div>
+                            <div>
+                                <dt>Min. Stability</dt>
+                                <dd>Stable</dd>
+                            </div>
+                        </dl>
+                        <div class="code">
+                            <div class="code-h"><span>custom url</span><button class="copy" data-copy="https://joomlaworks.github.io/joomla-3.x/list.xml">copy</button></div>
+                            <pre>https://joomlaworks.github.io/joomla-3.x/list.xml</pre>
+                        </div>
+                        <p class="foot">Future updates appear there too, with super admin notifications if enabled.</p>
+                    </div>
+                    <div class="card install-ssh">
+                        <span class="tag">existing sites · cli</span>
+                        <h3>One-liner over SSH</h3>
+                        <p>On a typical Linux server, <code>cd</code> into your Joomla site's folder and run:</p>
+                        <div class="code">
+                            <div class="code-h"><span>bash</span><button class="copy" data-copy="wget -qO- https://github.com/joomlaworks/joomla-3.x/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 &amp;&amp; rm -rf installation .github .gitignore *.md">copy</button></div>
+                            <pre><span class="kw">wget</span> -qO- https://github.com/joomlaworks/joomla-3.x/archive/refs/heads/main.tar.gz | <span class="kw">tar</span> -xz --strip-components=1 &amp;&amp; <span class="kw">rm</span> -rf installation .github .gitignore *.md</pre>
+                        </div>
+                        <p class="foot">Extracting the zip manually? Remember to remove the <code>/installation</code> folder afterwards.</p>
+                    </div>
+                    <div class="card install-fresh">
+                        <span class="tag">new sites</span>
+                        <h3>Fresh install</h3>
+                        <p>Extract the latest rolling release where you want the site to be and open it in a browser, or install from the command line on SQLite (PHP 7.4+ with <code>pdo_sqlite</code>), in an empty folder:</p>
+                        <div class="code">
+                            <div class="code-h"><span>bash</span><button class="copy" data-copy='wget -q https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip &amp;&amp; unzip -q joomla-latest.zip &amp;&amp; rm joomla-latest.zip &amp;&amp; php cli/joomla.php core:install --site-name="My Site" --admin-email=me@example.com --admin-username=admin'>copy</button></div>
+                            <pre><span class="kw">wget</span> -q https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip &amp;&amp; <span class="kw">unzip</span> -q joomla-latest.zip &amp;&amp; <span class="kw">rm</span> joomla-latest.zip &amp;&amp; <span class="kw">php</span> cli/joomla.php core:install --site-name="My Site" --admin-email=me@example.com --admin-username=admin</pre>
+                        </div>
+                        <a class="btn btn-p" href="https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip" target="_blank" rel="noopener noreferrer">Download joomla-latest.zip</a>
+                        <p class="foot">Add <code>--sample-data=news</code>, <code>blog</code> or <code>studio</code>. Built and tested for Linux/BSD; XAMPP or MAMP should work, but aren't tested.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agents" class="sec-line">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <span class="eyebrow">// command line &amp; ai</span>
+                        <h2>A CMS your scripts and AI assistants can drive</h2>
+                        <p class="lead">A command line built for automation from the ground up: 100 commands covering content, templates, databases, health checks and logs, every one with JSON output and dry runs. The built-in MCP server lets AI assistants such as Claude, ChatGPT or Gemini work with your site for you. Where Joomla 4 or newer has a command, ours keeps its name, so their users feel right at home.</p>
+                    </div>
+                    <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/AI-GUIDE.md" target="_blank" rel="noopener noreferrer">AI &amp; CLI guide →</a>
+                </div>
+                <div class="agent-grid">
+                    <ul class="agent-list">
+                        <li><b>Full content management</b><span>Articles, categories, tags, modules and menu items: list, create, change, publish, trash and delete, saved as the administrator saves them, acting as an account whose permissions apply (<code>--as</code>).</span></li>
+                        <li><b>Templates, databases, health</b><span>Template files and options with undoable changes and backups, <code>database:convert</code> between MySQL, PostgreSQL and SQLite in any direction, <code>site:health</code>, logs and the action log.</span></li>
+                        <li><b>Safe by default</b><span>Dry runs on every command that changes something. The MCP server is read-only unless you add <code>--allow-write</code>; anything that puts code on the server also needs <code>--allow-code</code>.</span></li>
+                        <li><b>Traceable</b><span>Every change is recorded in the User Actions Log, as made through the command line or MCP. Secrets are masked, and server file paths are never offered to the assistant.</span></li>
+                    </ul>
+                    <div class="agent-code">
+                        <div class="code">
+                            <div class="code-h"><span>connect claude code</span><button class="copy" data-copy="claude mcp add joomla -- php /path/to/site/cli/joomla.php mcp:serve">copy</button></div>
+                            <pre><span class="kw">claude</span> mcp add joomla -- <span class="kw">php</span> /path/to/site/cli/joomla.php mcp:serve
 <span class="cm"># let it make changes too: add --allow-write at the end</span>
 <span class="cm"># a site on another server: run it over ssh</span>
 <span class="kw">claude</span> mcp add joomla -- <span class="kw">ssh</span> user@example.com php /path/to/site/cli/joomla.php mcp:serve</pre>
-        </div>
-        <div class="ask">
-          <span class="k">you, to your assistant</span>
-          <p>“Check the site's health, then draft an article about our autumn opening hours in the News category — leave it unpublished for me to review.”</p>
-          <p>It runs <code>site:health</code>, finds the category, and creates the article as an unpublished draft, logged in the User Actions Log.</p>
-        </div>
-      </div>
-    </div>
-    <div class="cmds">
-      <span class="eyebrow">// all 100 commands, by group</span>
-      <div class="cmd-cols">
-        <div class="cmd-group"><h4>actionlog</h4><ul>
-          <li title="List the entries of the User Actions Log"><code>actionlog:<wbr>list</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>article</h4><ul>
-          <li title="Archive articles"><code>article:<wbr>archive</code></li>
-          <li title="Create an article"><code>article:<wbr>create</code></li>
-          <li title="Delete trashed articles for good"><code>article:<wbr>delete</code></li>
-          <li title="Show an article"><code>article:<wbr>get</code></li>
-          <li title="List articles"><code>article:<wbr>list</code></li>
-          <li title="Publish articles"><code>article:<wbr>publish</code></li>
-          <li title="Trash articles"><code>article:<wbr>trash</code></li>
-          <li title="Unpublish articles"><code>article:<wbr>unpublish</code></li>
-          <li title="Change an article"><code>article:<wbr>update</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>cache</h4><ul>
-          <li title="Clean cache entries"><code>cache:<wbr>clean</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>category</h4><ul>
-          <li title="Archive categories"><code>category:<wbr>archive</code></li>
-          <li title="Create a category"><code>category:<wbr>create</code></li>
-          <li title="Delete trashed categories for good"><code>category:<wbr>delete</code></li>
-          <li title="Show a category"><code>category:<wbr>get</code></li>
-          <li title="List categories"><code>category:<wbr>list</code></li>
-          <li title="Publish categories"><code>category:<wbr>publish</code></li>
-          <li title="Trash categories"><code>category:<wbr>trash</code></li>
-          <li title="Unpublish categories"><code>category:<wbr>unpublish</code></li>
-          <li title="Change a category"><code>category:<wbr>update</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>config</h4><ul>
-          <li title="Display the current value of a configuration option"><code>config:<wbr>get</code></li>
-          <li title="List all configuration options and their values"><code>config:<wbr>list</code></li>
-          <li title="Set a value for a configuration option"><code>config:<wbr>set</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>core</h4><ul>
-          <li title="Install a new site on SQLite"><code>core:<wbr>install</code></li>
-          <li title="Update Joomla"><code>core:<wbr>update</code></li>
-          <li title="Manage the update channel for Joomla core updates"><code>core:<wbr>update:<wbr>channel</code></li>
-          <li title="Check for Joomla updates"><code>core:<wbr>update:<wbr>check</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>database</h4><ul>
-          <li title="Move the site&#x27;s database between MySQL/MariaDB, PostgreSQL and SQLite"><code>database:<wbr>convert</code></li>
-          <li title="Export the database"><code>database:<wbr>export</code></li>
-          <li title="Import the database"><code>database:<wbr>import</code></li>
-          <li title="Optimise the database tables"><code>database:<wbr>optimize</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>extension</h4><ul>
-          <li title="Disable an extension"><code>extension:<wbr>disable</code></li>
-          <li title="Discover extensions"><code>extension:<wbr>discover</code></li>
-          <li title="Install discovered extensions"><code>extension:<wbr>discover:<wbr>install</code></li>
-          <li title="List discovered extensions"><code>extension:<wbr>discover:<wbr>list</code></li>
-          <li title="Enable an extension"><code>extension:<wbr>enable</code></li>
-          <li title="Install an extension from a URL or from a path"><code>extension:<wbr>install</code></li>
-          <li title="List installed extensions"><code>extension:<wbr>list</code></li>
-          <li title="Install an extension again over itself, to restore its files"><code>extension:<wbr>reinstall</code></li>
-          <li title="Remove an extension"><code>extension:<wbr>remove</code></li>
-          <li title="Update extensions"><code>extension:<wbr>update</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>finder</h4><ul>
-          <li title="Purge and rebuild the index"><code>finder:<wbr>index</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>help</h4><ul>
-          <li title="Show the help of a command"><code>help</code></li>
-          <li title="List the available commands"><code>list</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>log</h4><ul>
-          <li title="List the log files"><code>log:<wbr>list</code></li>
-          <li title="Show the last entries of a log file"><code>log:<wbr>tail</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>maintenance</h4><ul>
-          <li title="Maintenance Database structure"><code>maintenance:<wbr>database</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>mcp</h4><ul>
-          <li title="Serve the commands to AI assistants over MCP"><code>mcp:<wbr>serve</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>menu</h4><ul>
-          <li title="Create a menu item"><code>menu:<wbr>item:<wbr>create</code></li>
-          <li title="Delete trashed menu items for good"><code>menu:<wbr>item:<wbr>delete</code></li>
-          <li title="Show a menu item"><code>menu:<wbr>item:<wbr>get</code></li>
-          <li title="List menu items"><code>menu:<wbr>item:<wbr>list</code></li>
-          <li title="Publish menu items"><code>menu:<wbr>item:<wbr>publish</code></li>
-          <li title="Trash menu items"><code>menu:<wbr>item:<wbr>trash</code></li>
-          <li title="Unpublish menu items"><code>menu:<wbr>item:<wbr>unpublish</code></li>
-          <li title="Change a menu item"><code>menu:<wbr>item:<wbr>update</code></li>
-          <li title="List the site&#x27;s menus"><code>menu:<wbr>list</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>module</h4><ul>
-          <li title="Create a module"><code>module:<wbr>create</code></li>
-          <li title="Delete trashed modules for good"><code>module:<wbr>delete</code></li>
-          <li title="Show a module"><code>module:<wbr>get</code></li>
-          <li title="List modules"><code>module:<wbr>list</code></li>
-          <li title="Publish modules"><code>module:<wbr>publish</code></li>
-          <li title="Trash modules"><code>module:<wbr>trash</code></li>
-          <li title="Unpublish modules"><code>module:<wbr>unpublish</code></li>
-          <li title="Change a module"><code>module:<wbr>update</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>session</h4><ul>
-          <li title="Perform session garbage collection"><code>session:<wbr>gc</code></li>
-          <li title="Perform session metadata garbage collection"><code>session:<wbr>metadata:<wbr>gc</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>site</h4><ul>
-          <li title="Put the site into offline mode"><code>site:<wbr>down</code></li>
-          <li title="Check the site&#x27;s health in one report"><code>site:<wbr>health</code></li>
-          <li title="Show an overview of the site and its environment"><code>site:<wbr>info</code></li>
-          <li title="Put the site into online mode"><code>site:<wbr>up</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>tag</h4><ul>
-          <li title="Archive tags"><code>tag:<wbr>archive</code></li>
-          <li title="Create a tag"><code>tag:<wbr>create</code></li>
-          <li title="Delete trashed tags for good"><code>tag:<wbr>delete</code></li>
-          <li title="Show a tag"><code>tag:<wbr>get</code></li>
-          <li title="List tags"><code>tag:<wbr>list</code></li>
-          <li title="Publish tags"><code>tag:<wbr>publish</code></li>
-          <li title="Trash tags"><code>tag:<wbr>trash</code></li>
-          <li title="Unpublish tags"><code>tag:<wbr>unpublish</code></li>
-          <li title="Change a tag"><code>tag:<wbr>update</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>template</h4><ul>
-          <li title="Back up a template&#x27;s files"><code>template:<wbr>backup</code></li>
-          <li title="List the template backups"><code>template:<wbr>backup:<wbr>list</code></li>
-          <li title="Delete a file of a template"><code>template:<wbr>file:<wbr>delete</code></li>
-          <li title="Show a file of a template"><code>template:<wbr>file:<wbr>get</code></li>
-          <li title="List a template&#x27;s files"><code>template:<wbr>file:<wbr>list</code></li>
-          <li title="Write a file of a template (or undo the last change)"><code>template:<wbr>file:<wbr>set</code></li>
-          <li title="Show a template style: positions, modules, options, CSS"><code>template:<wbr>info</code></li>
-          <li title="List the template styles"><code>template:<wbr>list</code></li>
-          <li title="Restore a template backup"><code>template:<wbr>restore</code></li>
-          <li title="Change a template style&#x27;s options or title, or make it the default"><code>template:<wbr>style:<wbr>update</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>update</h4><ul>
-          <li title="Check for pending extension updates"><code>update:<wbr>extensions:<wbr>check</code></li>
-          <li title="Remove old system files"><code>update:<wbr>joomla:<wbr>remove-old-files</code></li>
-        </ul></div>
-        <div class="cmd-group"><h4>user</h4><ul>
-          <li title="Add a user"><code>user:<wbr>add</code></li>
-          <li title="Add a user to a group"><code>user:<wbr>addtogroup</code></li>
-          <li title="Block a user"><code>user:<wbr>block</code></li>
-          <li title="Delete a user"><code>user:<wbr>delete</code></li>
-          <li title="List all users"><code>user:<wbr>list</code></li>
-          <li title="Remove a user from a group"><code>user:<wbr>removefromgroup</code></li>
-          <li title="Change a user&#x27;s password"><code>user:<wbr>reset-password</code></li>
-          <li title="Unblock a user"><code>user:<wbr>unblock</code></li>
-        </ul></div>
-      </div>
-      <p class="sec-note"><code>php cli/joomla.php help &lt;command&gt;</code> shows a command's options and examples. Extensions can add commands of their own.</p>
-    </div>
-  </div>
-</section>
+                        </div>
+                        <div class="ask">
+                            <span class="k">you, to your assistant</span>
+                            <p>“Check the site's health, then draft an article about our autumn opening hours in the News category — leave it unpublished for me to review.”</p>
+                            <p>It runs <code>site:health</code>, finds the category, and creates the article as an unpublished draft, logged in the User Actions Log.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cmds">
+                    <span class="eyebrow">// all 100 commands, by group</span>
+                    <div class="cmd-cols">
+                        <div class="cmd-group">
+                            <h4>actionlog</h4>
+                            <ul>
+                                <li title="List the entries of the User Actions Log"><code>actionlog:<wbr>list</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>article</h4>
+                            <ul>
+                                <li title="Archive articles"><code>article:<wbr>archive</code></li>
+                                <li title="Create an article"><code>article:<wbr>create</code></li>
+                                <li title="Delete trashed articles for good"><code>article:<wbr>delete</code></li>
+                                <li title="Show an article"><code>article:<wbr>get</code></li>
+                                <li title="List articles"><code>article:<wbr>list</code></li>
+                                <li title="Publish articles"><code>article:<wbr>publish</code></li>
+                                <li title="Trash articles"><code>article:<wbr>trash</code></li>
+                                <li title="Unpublish articles"><code>article:<wbr>unpublish</code></li>
+                                <li title="Change an article"><code>article:<wbr>update</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>cache</h4>
+                            <ul>
+                                <li title="Clean cache entries"><code>cache:<wbr>clean</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>category</h4>
+                            <ul>
+                                <li title="Archive categories"><code>category:<wbr>archive</code></li>
+                                <li title="Create a category"><code>category:<wbr>create</code></li>
+                                <li title="Delete trashed categories for good"><code>category:<wbr>delete</code></li>
+                                <li title="Show a category"><code>category:<wbr>get</code></li>
+                                <li title="List categories"><code>category:<wbr>list</code></li>
+                                <li title="Publish categories"><code>category:<wbr>publish</code></li>
+                                <li title="Trash categories"><code>category:<wbr>trash</code></li>
+                                <li title="Unpublish categories"><code>category:<wbr>unpublish</code></li>
+                                <li title="Change a category"><code>category:<wbr>update</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>config</h4>
+                            <ul>
+                                <li title="Display the current value of a configuration option"><code>config:<wbr>get</code></li>
+                                <li title="List all configuration options and their values"><code>config:<wbr>list</code></li>
+                                <li title="Set a value for a configuration option"><code>config:<wbr>set</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>core</h4>
+                            <ul>
+                                <li title="Install a new site on SQLite"><code>core:<wbr>install</code></li>
+                                <li title="Update Joomla"><code>core:<wbr>update</code></li>
+                                <li title="Manage the update channel for Joomla core updates"><code>core:<wbr>update:<wbr>channel</code></li>
+                                <li title="Check for Joomla updates"><code>core:<wbr>update:<wbr>check</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>database</h4>
+                            <ul>
+                                <li title="Move the site&#x27;s database between MySQL/MariaDB, PostgreSQL and SQLite"><code>database:<wbr>convert</code></li>
+                                <li title="Export the database"><code>database:<wbr>export</code></li>
+                                <li title="Import the database"><code>database:<wbr>import</code></li>
+                                <li title="Optimise the database tables"><code>database:<wbr>optimize</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>extension</h4>
+                            <ul>
+                                <li title="Disable an extension"><code>extension:<wbr>disable</code></li>
+                                <li title="Discover extensions"><code>extension:<wbr>discover</code></li>
+                                <li title="Install discovered extensions"><code>extension:<wbr>discover:<wbr>install</code></li>
+                                <li title="List discovered extensions"><code>extension:<wbr>discover:<wbr>list</code></li>
+                                <li title="Enable an extension"><code>extension:<wbr>enable</code></li>
+                                <li title="Install an extension from a URL or from a path"><code>extension:<wbr>install</code></li>
+                                <li title="List installed extensions"><code>extension:<wbr>list</code></li>
+                                <li title="Install an extension again over itself, to restore its files"><code>extension:<wbr>reinstall</code></li>
+                                <li title="Remove an extension"><code>extension:<wbr>remove</code></li>
+                                <li title="Update extensions"><code>extension:<wbr>update</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>finder</h4>
+                            <ul>
+                                <li title="Purge and rebuild the index"><code>finder:<wbr>index</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>help</h4>
+                            <ul>
+                                <li title="Show the help of a command"><code>help</code></li>
+                                <li title="List the available commands"><code>list</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>log</h4>
+                            <ul>
+                                <li title="List the log files"><code>log:<wbr>list</code></li>
+                                <li title="Show the last entries of a log file"><code>log:<wbr>tail</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>maintenance</h4>
+                            <ul>
+                                <li title="Maintenance Database structure"><code>maintenance:<wbr>database</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>mcp</h4>
+                            <ul>
+                                <li title="Serve the commands to AI assistants over MCP"><code>mcp:<wbr>serve</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>menu</h4>
+                            <ul>
+                                <li title="Create a menu item"><code>menu:<wbr>item:<wbr>create</code></li>
+                                <li title="Delete trashed menu items for good"><code>menu:<wbr>item:<wbr>delete</code></li>
+                                <li title="Show a menu item"><code>menu:<wbr>item:<wbr>get</code></li>
+                                <li title="List menu items"><code>menu:<wbr>item:<wbr>list</code></li>
+                                <li title="Publish menu items"><code>menu:<wbr>item:<wbr>publish</code></li>
+                                <li title="Trash menu items"><code>menu:<wbr>item:<wbr>trash</code></li>
+                                <li title="Unpublish menu items"><code>menu:<wbr>item:<wbr>unpublish</code></li>
+                                <li title="Change a menu item"><code>menu:<wbr>item:<wbr>update</code></li>
+                                <li title="List the site&#x27;s menus"><code>menu:<wbr>list</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>module</h4>
+                            <ul>
+                                <li title="Create a module"><code>module:<wbr>create</code></li>
+                                <li title="Delete trashed modules for good"><code>module:<wbr>delete</code></li>
+                                <li title="Show a module"><code>module:<wbr>get</code></li>
+                                <li title="List modules"><code>module:<wbr>list</code></li>
+                                <li title="Publish modules"><code>module:<wbr>publish</code></li>
+                                <li title="Trash modules"><code>module:<wbr>trash</code></li>
+                                <li title="Unpublish modules"><code>module:<wbr>unpublish</code></li>
+                                <li title="Change a module"><code>module:<wbr>update</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>session</h4>
+                            <ul>
+                                <li title="Perform session garbage collection"><code>session:<wbr>gc</code></li>
+                                <li title="Perform session metadata garbage collection"><code>session:<wbr>metadata:<wbr>gc</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>site</h4>
+                            <ul>
+                                <li title="Put the site into offline mode"><code>site:<wbr>down</code></li>
+                                <li title="Check the site&#x27;s health in one report"><code>site:<wbr>health</code></li>
+                                <li title="Show an overview of the site and its environment"><code>site:<wbr>info</code></li>
+                                <li title="Put the site into online mode"><code>site:<wbr>up</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>tag</h4>
+                            <ul>
+                                <li title="Archive tags"><code>tag:<wbr>archive</code></li>
+                                <li title="Create a tag"><code>tag:<wbr>create</code></li>
+                                <li title="Delete trashed tags for good"><code>tag:<wbr>delete</code></li>
+                                <li title="Show a tag"><code>tag:<wbr>get</code></li>
+                                <li title="List tags"><code>tag:<wbr>list</code></li>
+                                <li title="Publish tags"><code>tag:<wbr>publish</code></li>
+                                <li title="Trash tags"><code>tag:<wbr>trash</code></li>
+                                <li title="Unpublish tags"><code>tag:<wbr>unpublish</code></li>
+                                <li title="Change a tag"><code>tag:<wbr>update</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>template</h4>
+                            <ul>
+                                <li title="Back up a template&#x27;s files"><code>template:<wbr>backup</code></li>
+                                <li title="List the template backups"><code>template:<wbr>backup:<wbr>list</code></li>
+                                <li title="Delete a file of a template"><code>template:<wbr>file:<wbr>delete</code></li>
+                                <li title="Show a file of a template"><code>template:<wbr>file:<wbr>get</code></li>
+                                <li title="List a template&#x27;s files"><code>template:<wbr>file:<wbr>list</code></li>
+                                <li title="Write a file of a template (or undo the last change)"><code>template:<wbr>file:<wbr>set</code></li>
+                                <li title="Show a template style: positions, modules, options, CSS"><code>template:<wbr>info</code></li>
+                                <li title="List the template styles"><code>template:<wbr>list</code></li>
+                                <li title="Restore a template backup"><code>template:<wbr>restore</code></li>
+                                <li title="Change a template style&#x27;s options or title, or make it the default"><code>template:<wbr>style:<wbr>update</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>update</h4>
+                            <ul>
+                                <li title="Check for pending extension updates"><code>update:<wbr>extensions:<wbr>check</code></li>
+                                <li title="Remove old system files"><code>update:<wbr>joomla:<wbr>remove-old-files</code></li>
+                            </ul>
+                        </div>
+                        <div class="cmd-group">
+                            <h4>user</h4>
+                            <ul>
+                                <li title="Add a user"><code>user:<wbr>add</code></li>
+                                <li title="Add a user to a group"><code>user:<wbr>addtogroup</code></li>
+                                <li title="Block a user"><code>user:<wbr>block</code></li>
+                                <li title="Delete a user"><code>user:<wbr>delete</code></li>
+                                <li title="List all users"><code>user:<wbr>list</code></li>
+                                <li title="Remove a user from a group"><code>user:<wbr>removefromgroup</code></li>
+                                <li title="Change a user&#x27;s password"><code>user:<wbr>reset-password</code></li>
+                                <li title="Unblock a user"><code>user:<wbr>unblock</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="sec-note"><code>php cli/joomla.php help &lt;command&gt;</code> shows a command's options and examples. Extensions can add commands of their own.</p>
+                </div>
+            </div>
+        </section>
 
-<section id="compat" class="sec-line">
-  <div class="wrap">
-    <span class="eyebrow">// compatibility</span>
-    <h2>It runs where your sites already live</h2>
-    <p class="lead">PHP 7.4 is the recommended baseline, not a hard cutoff. Older servers keep getting security patches while you plan the move.</p>
-    <div class="three">
-      <div class="tile">
-        <div class="big">PHP 8.5</div>
-        <h3>Modern stacks</h3>
-        <p>Compatible with PHP up to 8.5, MySQL 8.0, 8.4 and 9.x, current MariaDB, PostgreSQL 18 and SQLite. Deprecations are fixed as they're reported.</p>
-        <a href="#database">Database support →</a>
-      </div>
-      <div class="tile">
-        <div class="big">PHP 7.1+</div>
-        <h3>Older hosts</h3>
-        <p>Sites on PHP 7.1 through 7.3 are still offered updates through the Joomla Update component. PHP 7.0 and below is not supported. Moving from 5.6 or 7.x to 7.4 is typically a safe switch — just check your extensions and templates aren't holding you back.</p>
-      </div>
-      <div class="tile">
-        <div class="big">CentOS 7?</div>
-        <h3>Stuck servers</h3>
-        <p>A server hosting Joomla sites on PHP older than 7.2 may be stuck on CentOS 7/cPanel, no longer supported by either vendor. Switching to this distribution takes you closer to upgrading — e.g. AlmaLinux 8 with cPanel, or Ubuntu 22.04+ with Ondřej's PHP repos.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <section id="compat" class="sec-line">
+            <div class="wrap">
+                <span class="eyebrow">// compatibility</span>
+                <h2>It runs where your sites already live</h2>
+                <p class="lead">PHP 7.4 is the recommended baseline, not a hard cutoff. Older servers keep getting security patches while you plan the move.</p>
+                <div class="three">
+                    <div class="tile">
+                        <div class="big">PHP 8.5</div>
+                        <h3>Modern stacks</h3>
+                        <p>Compatible with PHP up to 8.5, MySQL 8.0, 8.4 and 9.x, current MariaDB, PostgreSQL 18 and SQLite. Deprecations are fixed as they're reported.</p>
+                        <a href="#database">Database support →</a>
+                    </div>
+                    <div class="tile">
+                        <div class="big">PHP 7.1+</div>
+                        <h3>Older hosts</h3>
+                        <p>Sites on PHP 7.1 through 7.3 are still offered updates through the Joomla Update component. PHP 7.0 and below is not supported. Moving from 5.6 or 7.x to 7.4 is typically a safe switch — just check your extensions and templates aren't holding you back.</p>
+                    </div>
+                    <div class="tile">
+                        <div class="big">CentOS 7?</div>
+                        <h3>Stuck servers</h3>
+                        <p>A server hosting Joomla sites on PHP older than 7.2 may be stuck on CentOS 7/cPanel, no longer supported by either vendor. Switching to this distribution takes you closer to upgrading — e.g. AlmaLinux 8 with cPanel, or Ubuntu 22.04+ with Ondřej's PHP repos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="database" class="sec-line">
-  <div class="wrap">
-    <span class="eyebrow">// databases</span>
-    <h2>Every major database, tested</h2>
-    <p class="lead">Joomla 3.x was always centred on MySQL/MariaDB. Since v3.17, all of its databases simply work: PostgreSQL and SQL Server are tested again, and SQLite is new. The core works on every one of them; many third-party extensions only ship MySQL/MariaDB database scripts, so check those before moving a site to PostgreSQL or SQL Server.</p>
-    <div class="dbt-wrap">
-      <table class="dbt">
-        <thead><tr><th>Database</th><th>Minimum</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>MySQL</td><td>5.5.3</td><td>Tested and actively supported (5.7 or newer recommended); 8.0, 8.4 and 9.x on their default settings</td></tr>
-          <tr><td>MariaDB</td><td>5.5</td><td>Tested and actively supported (10.11 and 11.8 tested)</td></tr>
-          <tr><td>PostgreSQL</td><td>9.0</td><td>Tested with both drivers since v3.17 (16 or newer recommended, preferably 18)</td></tr>
-          <tr><td>SQL Server / Azure SQL</td><td>2008 R2</td><td>Inherited from stock Joomla 3.x; tested since v3.17 on SQL Server 2022 with both drivers (core only: few extensions support it)</td></tr>
-          <tr><td>SQLite <span class="new">new</span></td><td>3.37.0</td><td>Experimental, PHP 7.4+. Runs MySQL SQL through an emulation layer, so core and extensions work unchanged; tested on 3.37.2 and 3.46.1</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="sec-note">The installer enforces these minimums. Once a site runs 3.16 or newer, it won't be offered further updates while its database is below them, and sees a notice in Joomla Update instead.</p>
+        <section id="database" class="sec-line">
+            <div class="wrap">
+                <span class="eyebrow">// databases</span>
+                <h2>Every major database, tested</h2>
+                <p class="lead">Joomla 3.x was always centred on MySQL/MariaDB. Since v3.17, all of its databases simply work: PostgreSQL and SQL Server are tested again, and SQLite is new. The core works on every one of them; many third-party extensions only ship MySQL/MariaDB database scripts, so check those before moving a site to PostgreSQL or SQL Server.</p>
+                <div class="dbt-wrap">
+                    <table class="dbt">
+                        <thead>
+                            <tr>
+                                <th>Database</th>
+                                <th>Minimum</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MySQL</td>
+                                <td>5.5.3</td>
+                                <td>Tested and actively supported (5.7 or newer recommended); 8.0, 8.4 and 9.x on their default settings</td>
+                            </tr>
+                            <tr>
+                                <td>MariaDB</td>
+                                <td>5.5</td>
+                                <td>Tested and actively supported (10.11 and 11.8 tested)</td>
+                            </tr>
+                            <tr>
+                                <td>PostgreSQL</td>
+                                <td>9.0</td>
+                                <td>Tested with both drivers since v3.17 (16 or newer recommended, preferably 18)</td>
+                            </tr>
+                            <tr>
+                                <td>SQL Server / Azure SQL</td>
+                                <td>2008 R2</td>
+                                <td>Inherited from stock Joomla 3.x; tested since v3.17 on SQL Server 2022 with both drivers (core only: few extensions support it)</td>
+                            </tr>
+                            <tr>
+                                <td>SQLite <span class="new">new</span></td>
+                                <td>3.37.0</td>
+                                <td>Experimental, PHP 7.4+. Runs MySQL SQL through an emulation layer, so core and extensions work unchanged; tested on 3.37.2 and 3.46.1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="sec-note">The installer enforces these minimums. Once a site runs 3.16 or newer, it won't be offered further updates while its database is below them, and sees a notice in Joomla Update instead.</p>
 
-    <div class="db-notes">
-      <div class="card">
-        <span class="tag">mysql 8.0 · 8.4 · 9.x</span>
-        <h3>No native passwords needed</h3>
-        <p>MySQL's default authentication since 8.0 (<code>caching_sha2_password</code>) is handled by PHP itself, so <code>my.cnf</code> needs no changes. MySQL 9 removed <code>mysql_native_password</code>: before upgrading, switch users created with it to the default.</p>
-        <div class="code">
-          <div class="code-h"><span>sql</span><button class="copy" data-copy="ALTER USER 'username'@'host' IDENTIFIED WITH caching_sha2_password BY 'password';">copy</button></div>
-          <pre><span class="kw">ALTER USER</span> 'username'@'host' <span class="kw">IDENTIFIED WITH</span> caching_sha2_password <span class="kw">BY</span> 'password';</pre>
-        </div>
-      </div>
-      <div class="card">
-        <span class="tag">sqlite · experimental</span>
-        <h3>The site in one file</h3>
-        <p>SQLite runs in WAL mode: visitors keep reading while a write happens, and writes queue for their turn instead of failing. Most writes take milliseconds, and SQLite sites keep sessions in PHP, so browsing writes nothing to the database. With caching on, that makes it a practical choice for small to medium sites, not just development and testing. Sites with many simultaneous writers (busy shops, forums) are better on MySQL/MariaDB.</p>
-        <div class="code">
-          <div class="code-h"><span>move a site to sqlite, and back</span><button class="copy" data-copy="php cli/joomla.php database:convert --to=sqlite">copy</button></div>
-          <pre><span class="kw">php</span> cli/joomla.php database:convert --to=sqlite
+                <div class="db-notes">
+                    <div class="card">
+                        <span class="tag">mysql 8.0 · 8.4 · 9.x</span>
+                        <h3>No native passwords needed</h3>
+                        <p>MySQL's default authentication since 8.0 (<code>caching_sha2_password</code>) is handled by PHP itself, so <code>my.cnf</code> needs no changes. MySQL 9 removed <code>mysql_native_password</code>: before upgrading, switch users created with it to the default.</p>
+                        <div class="code">
+                            <div class="code-h"><span>sql</span><button class="copy" data-copy="ALTER USER 'username'@'host' IDENTIFIED WITH caching_sha2_password BY 'password';">copy</button></div>
+                            <pre><span class="kw">ALTER USER</span> 'username'@'host' <span class="kw">IDENTIFIED WITH</span> caching_sha2_password <span class="kw">BY</span> 'password';</pre>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="tag">sqlite · experimental</span>
+                        <h3>The site in one file</h3>
+                        <p>SQLite runs in WAL mode: visitors keep reading while a write happens, and writes queue for their turn instead of failing. Most writes take milliseconds, and SQLite sites keep sessions in PHP, so browsing writes nothing to the database. With caching on, that makes it a practical choice for small to medium sites, not just development and testing. Sites with many simultaneous writers (busy shops, forums) are better on MySQL/MariaDB.</p>
+                        <div class="code">
+                            <div class="code-h"><span>move a site to sqlite, and back</span><button class="copy" data-copy="php cli/joomla.php database:convert --to=sqlite">copy</button></div>
+                            <pre><span class="kw">php</span> cli/joomla.php database:convert --to=sqlite
 <span class="kw">php</span> cli/joomla.php database:convert --to=mysqli</pre>
-        </div>
-      </div>
-      <div class="card">
-        <span class="tag">mysql &amp; mariadb</span>
-        <h3>Recommended setting</h3>
-        <p>For maximum compatibility with Joomla 3.x extensions, in both MySQL and MariaDB. MariaDB keeps <code>mysql_native_password</code> as its default, which works as before.</p>
-        <div class="code">
-          <div class="code-h"><span>my.cnf</span><button class="copy" data-copy='sql_mode = ""'>copy</button></div>
-          <pre>sql_mode = ""</pre>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="tag">mysql &amp; mariadb</span>
+                        <h3>Recommended setting</h3>
+                        <p>For maximum compatibility with Joomla 3.x extensions, in both MySQL and MariaDB. MariaDB keeps <code>mysql_native_password</code> as its default, which works as before.</p>
+                        <div class="code">
+                            <div class="code-h"><span>my.cnf</span><button class="copy" data-copy='sql_mode = ""'>copy</button></div>
+                            <pre>sql_mode = ""</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="changelog" class="sec-line">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// changelog</span>
-        <h2>What's been happening</h2>
-      </div>
-      <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Full changelog on GitHub →</a>
-    </div>
-    <div class="news">
-      <article class="rel">
-        <div class="when"><b>v3.17</b>October 10, 2026<br><span class="badge">latest</span></div>
-        <div>
-          <h3>Every database, three new templates, and a command line built for AI</h3>
-          <p>Full support for every major database (with SQLite new and experimental), a brand new installer, three new templates with their own sample data, TinyMCE 8, and a command line with a built-in MCP server for AI assistants. Plus 22 security fixes.</p>
+        <section id="changelog" class="sec-line">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <span class="eyebrow">// changelog</span>
+                        <h2>What's been happening</h2>
+                    </div>
+                    <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Full changelog on GitHub →</a>
+                </div>
+                <div class="news">
+                    <article class="rel">
+                        <div class="when"><b>v3.17</b>October 10, 2026<br><span class="badge">latest</span></div>
+                        <div>
+                            <h3>Every database, three new templates, and a command line built for AI</h3>
+                            <p>Full support for every major database (with SQLite new and experimental), a brand new installer, three new templates with their own sample data, TinyMCE 8, and a command line with a built-in MCP server for AI assistants. Plus 22 security fixes.</p>
+                        </div>
+                    </article>
+                    <article class="rel">
+                        <div class="when"><b>v3.16</b>October 3, 2026</div>
+                        <div>
+                            <h3>Little WAF, a smarter Joomla Update, and a big deprecation sweep</h3>
+                            <p>Backported security fixes from Joomla 6.1/5.4, the opt-in Little WAF plugin, Joomla Update that respects uninstalled core extensions, and PHP 8.1–8.5 deprecations swept from 805 files.</p>
+                        </div>
+                    </article>
+                    <article class="rel">
+                        <div class="when"><b>v3.15</b>July 18, 2026</div>
+                        <div>
+                            <h3>13 CVE backports, module caching that finally respects your settings</h3>
+                            <p>13 CVE backports, module caching that finally respects Global Configuration, a custom cache time option on 26 core modules, and PHP 7.1–7.3 sites kept on the update channel.</p>
+                        </div>
+                    </article>
+                    <article class="rel">
+                        <div class="when"><b>v3.14</b>July 4, 2026</div>
+                        <div>
+                            <h3>PHP 8.5 deprecation fixes</h3>
+                            <p>PHP 8.5 deprecation fixes, and language file versions in line with the main version.</p>
+                        </div>
+                    </article>
+                    <article class="rel">
+                        <div class="when"><b>v3.13</b>May 31, 2026</div>
+                        <div>
+                            <h3>A tidier Isis admin</h3>
+                            <p>CSS view transitions in the Isis administrator template, obsolete CSS removed, and further PHP 8.x fixes.</p>
+                        </div>
+                    </article>
+                    <article class="rel">
+                        <div class="when"><b>v3.12</b>May 21, 2026</div>
+                        <div>
+                            <h3>Built-in update server</h3>
+                            <p>Updates delivered through the Joomla backend updater, legacy extensions removed, and more security patches from Joomla 4/5/6.</p>
+                        </div>
+                    </article>
+                    <article class="rel">
+                        <div class="when"><b>v3.11</b>April 20, 2026</div>
+                        <div>
+                            <h3>PHP 8.5 and the first CVE backports</h3>
+                            <p>PHP up to 8.5, better MySQL 8.x support, and the first backported CVE fixes after Joomla 3.10.20 eLTS.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="security" class="sec-line">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <span class="eyebrow">// security</span>
+                        <h2>Security fixes, backported as they land</h2>
+                        <p class="lead">Every official Joomla security release is reviewed against this codebase. When the vulnerable code exists in 3.x, it gets fixed here — including issues listed upstream as affecting only Joomla 4.0 and later. And we audit 3.x ourselves: most of v3.17's 22 fixes were in stock Joomla 3 all along.</p>
+                    </div>
+                    <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Detailed changelog →</a>
+                </div>
+                <div class="cves" id="cves">
+                    <div class="cve"><span class="v">v3.17</span><span>Crafted packages could write files outside the site's folders, through Joomla Update's extraction, the extension installer or the archive code; such packages are now refused as a whole</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve"><span class="v">v3.17</span><span>Anyone could run the installer again on an installed site while the <code>installation</code> folder remained; now only the browser that installed the site can go on</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve"><span class="v">v3.17</span><span>The configuration writer could put PHP code into <code>configuration.php</code> through a crafted setting name</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve"><span class="v">v3.17</span><span>The installer's ownership check for remote databases could be skipped by going straight to the step that writes the configuration</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve"><span class="v">v3.17</span><span>MySQL (PDO) and PostgreSQL drivers ran several SQL statements given at once; every driver now runs one, like "mysqli"</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve"><span class="v">v3.17</span><span><code>{loadmoduleid}</code> showed any module to anyone, whatever its access level or publishing dates</span><span class="id">Since 3.12</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>Setting the Super User's group in the installer could put every user into the Super Users group when the mapping already existed</span><span class="id">Installer</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>The module edit form's ordering list could be read by anyone, listing the titles of the modules in any position</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>FOF's download class read local files (<code>file://</code>) and could write outside the temporary folder</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>Query limits and offsets were written into the SQL as passed, on every database driver</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>PostgreSQL connection settings weren't quoted, and the PDO drivers accepted connection settings that could add settings of their own</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>Usernames differing only in case could be registered on PostgreSQL</span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>Joomla Update showed the update feed's values unescaped; Install from URL and Install from Web accepted download addresses other than <code>http</code>/<code>https</code></span><span class="id">Stock Joomla 3</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>Little WAF now also checks form data and encoded spellings of the tags, and works on servers without <code>REQUEST_URI</code></span><span class="id">Joomla 3.x UTD</span></div>
+                    <div class="cve cve-more"><span class="v">v3.17</span><span>Command line: <code>database:convert</code>'s temporary copy and the backup folders' intermediate levels are now protected from the web</span><span class="id">Joomla 3.x UTD</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>Guest account creation via the frontend profile-save action, even with user registration disabled</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>Arbitrary directory deletion through a path traversal in the file cache's group handling</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>Two XSS-filter bypasses using HTML5 entities and unterminated numeric references</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>SSRF: feed, SEF-domain, user-profile website and custom update URL fields restricted to web URL schemes</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>Tagged items in access-restricted categories leaking through tag views and the "Tags - Popular"/"Tags - Similar" modules</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>HTTP header injection via an unescaped filename in the banner-tracking download and the contact vCard export</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>XSS gaps in <code>JHtml::link()</code>/<code>JHtml::iframe()</code>, the module manager's position column, the toolbar link button and the generic image layout's attribute names</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>Stored XSS: contact name/position/category echoed unescaped into public-facing schema.org markup</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>Missing per-item edit-permission checks in the category and custom-field batch-copy actions</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>A missing access check on the second record of a content history comparison</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.16</span><span>A missing SHTML file extension in the Template Manager's upload blacklist</span><span class="id">Joomla 6.1 / 5.4</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>Local file inclusion (LFI) via the view layout parameter</span><span class="id">CVE-2026-40383</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>SQL injection in the com_tags "all tags" list ordering</span><span class="id">CVE-2026-352212</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>Privilege-escalation XSS via language overrides by non-Super-Users with delegated translation access</span><span class="id">CVE-2026-48954</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>XSS in the template manager's file/image/font editor — three code paths fixed where the official fix covered one</span><span class="id">CVE-2026-48950</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>Unescaped attribute output in the generic image layout used by extensions</span><span class="id">CVE-2026-48953</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>Reflected XSS in the com_installer update list view</span><span class="id">CVE-2026-48952</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>Stored XSS in the content history preview screen</span><span class="id">CVE-2026-30894</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>Password/username reset links sent over plain HTTP even on HTTPS-only sites</span><span class="id">CVE-2026-48902</span></div>
+                    <div class="cve cve-more"><span class="v">v3.15</span><span>Access-control bypass allowing anyone to download restricted contacts' vCards in com_contact</span><span class="id">CVE-2026-48948</span></div>
+                    <button class="cve-toggle" id="cveToggle" aria-expanded="false">Show more →</button>
+                </div>
+                <div class="callout">
+                    <p><b>Little WAF.</b> An opt-in system plugin (since v3.16) that filters known attack signatures against abandoned or historically vulnerable third-party extensions before any component runs, with filters for Sourcerer-style <code>{source}</code> URL injection and Modules Anywhere-style <code>{module}</code>/<code>{modulepos}</code> tags. Since v3.17 it also checks form data and encoded spellings, and each filter only acts while its extension is installed. Disabled by default; more filters will be added over time.</p>
+                </div>
+                <p class="sec-note">Advisories that don't apply — because the vulnerable feature doesn't exist in 3.x — and issues already covered by earlier hardening are documented in the changelog as well.</p>
+            </div>
+        </section>
+
+        <!-- Testimonials: hidden until there are real ones (remove "hidden" to show the section) -->
+        <section id="voices" class="sec-line" hidden>
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <span class="eyebrow">// voices</span>
+                        <h2>From the people running it</h2>
+                        <p class="lead">Site owners, agencies and hosts on moving their Joomla 3.x sites to UTD.</p>
+                    </div>
+                    <span class="ph">placeholder content</span>
+                </div>
+                <div class="voices">
+                    <div class="voice">
+                        <div class="who"><span class="avatar">IMG</span><span><b>Name Surname</b>Agency · 40 client sites</span></div>
+                        <p>Testimonial from an agency about upgrading client sites in place, and what it saved compared to a full migration.</p>
+                    </div>
+                    <div class="voice">
+                        <div class="who"><span class="avatar">IMG</span><span><b>Name Surname</b>Hosting provider</span></div>
+                        <p>Testimonial from a hosting company about finally retiring old PHP versions and servers across their fleet.</p>
+                    </div>
+                    <div class="voice">
+                        <div class="who"><span class="avatar">IMG</span><span><b>Name Surname</b>Site owner</span></div>
+                        <p>Short testimonial from a small site owner on how simple the backend update was.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="sec-line">
+            <div class="wrap">
+                <span class="eyebrow">// long-term plan · a different project</span>
+                <h2>A leaner fork is on the way</h2>
+                <p class="lead">A new fork based on Joomla 3.x is a work in progress — but very, very active. When released, it will feature:</p>
+                <div class="road">
+                    <div><span class="k">01 · core</span>
+                        <h3>Stripped down</h3>
+                        <p>Joomla 3.x with all non-essential extensions removed.</p>
+                    </div>
+                    <div><span class="k">02 · php</span>
+                        <h3>PHP 7.4 → 8.x</h3>
+                        <p>Fully compatible with PHP versions from 7.4 to 8.x and so on.</p>
+                    </div>
+                    <div><span class="k">03 · database</span>
+                        <h3>First-class databases</h3>
+                        <p>First-class support for MySQL, MariaDB, PostgreSQL and SQLite. The SQL Server and Azure SQL drivers will be dropped.</p>
+                    </div>
+                    <div><span class="k">04 · content</span>
+                        <h3>K2 for content</h3>
+                        <p>com_content and anything related is removed entirely, decoupling content features from a solid CMS base that keeps true backwards compatibility with past releases of the fork.</p>
+                    </div>
+                    <div><span class="k">05 · admin</span>
+                        <h3>Admin refresh</h3>
+                        <p>A refreshed administrator experience.</p>
+                    </div>
+                    <div><span class="k">06 · js</span>
+                        <h3>Modern JS only</h3>
+                        <p>Gradual jQuery/MooTools removal.</p>
+                    </div>
+                    <div><span class="k">07 · future</span>
+                        <h3>Built to last</h3>
+                        <p>Gradual codebase modernization to support future PHP &amp; MySQL/MariaDB versions without much effort.</p>
+                    </div>
+                    <div><span class="k">08 · agentic</span>
+                        <h3>A truly agentic CMS</h3>
+                        <p>AI agents working alongside editors, developers and site owners. The command line and MCP server of Joomla 3.x UTD are the seed: the integrations to come grow from them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="sec-line">
+            <div class="wrap">
+                <span class="eyebrow">// community</span>
+                <h2>Get involved</h2>
+                <p class="lead">This is a community effort. Report bugs, contribute fixes, or ask the codebase directly.</p>
+                <div class="comm">
+                    <a href="https://github.com/joomlaworks/joomla-3.x/discussions" target="_blank" rel="noopener noreferrer">
+                        <h3>Discuss</h3>
+                        <p>Report bugs with this distribution — including functional bugs in any existing Joomla 3.x feature.</p><span class="go">Open discussions →</span>
+                    </a>
+                    <a href="https://github.com/joomlaworks/joomla-3.x/issues" target="_blank" rel="noopener noreferrer">
+                        <h3>Contribute</h3>
+                        <p>Meaningful upgrades to existing functionality or bug fixes — open an issue.</p><span class="go">Open an issue →</span>
+                    </a>
+                    <a href="https://deepwiki.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">
+                        <h3>DeepWiki</h3>
+                        <p>Ask, search or chat with the codebase. Powered by Devin.</p><span class="go">Ask DeepWiki →</span>
+                    </a>
+                    <a href="https://zread.ai/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">
+                        <h3>Zread</h3>
+                        <p>Ask, search or chat with the codebase. Powered by Z.ai/GLM.</p><span class="go">Ask Zread →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div class="foot-brand">
+                    <a class="mark" href="#top" aria-label="Joomla 3.x UTD home"><svg class="logo" viewBox="0 0 350 100" aria-hidden="true">
+                            <g font-family="Geist, 'Inter Tight', system-ui, sans-serif" font-weight="700" font-size="66" letter-spacing="-2" fill="currentColor"><text x="2" y="74">J3</text><text x="200" y="74">UTD</text></g>
+                            <g stroke-width="16" stroke-linecap="round" fill="none">
+                                <path d="M130 40 100 10" stroke="#5091cd" />
+                                <path d="M150 40 180 10" stroke="#7ac143" />
+                                <path d="M150 60 180 90" stroke="#f9a541" />
+                                <path d="M130 60 100 90" stroke="#f44321" />
+                            </g>
+                        </svg></a>
+                    <p>An up-to-date distribution of Joomla 3.x: secure, current &amp; still yours.</p>
+                </div>
+                <div>
+                    <h4>Get it</h4>
+                    <ul>
+                        <li><a href="https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip" target="_blank" rel="noopener noreferrer">Download</a></li>
+                        <li><a href="#install">Install &amp; upgrade</a></li>
+                        <li><a href="#templates">Templates</a></li>
+                        <li><a href="#demos">Live demos</a></li>
+                        <li><a href="#compat">Compatibility</a></li>
+                        <li><a href="#database">Databases</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Project</h4>
+                    <ul>
+                        <li><a href="#new">What's new</a></li>
+                        <li><a href="#changelog">Changelog</a></li>
+                        <li><a href="#security">Security</a></li>
+                        <li><a href="#agents">CLI &amp; AI</a></li>
+                        <li><a href="https://github.com/joomlaworks/joomla-3.x/blob/main/AI-GUIDE.md" target="_blank" rel="noopener noreferrer">AI &amp; CLI guide</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="https://github.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/joomlaworks/joomla-3.x/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
+                        <li><a href="https://github.com/joomlaworks/joomla-3.x/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+                        <li><a href="https://deepwiki.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">DeepWiki</a></li>
+                        <li><a href="https://zread.ai/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">Zread</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="legal">
+                <span>Joomla 3.x UTD is an independent community project. It is not affiliated with, endorsed by, or supported by Open Source Matters, Inc. or The Joomla! Project™. The Joomla!® name and logo are trademarks of Open Source Matters, Inc. in the United States and other countries. This project does not use the Joomla! logo.</span>
+                <span>Free software, released under the <a href="https://github.com/joomlaworks/joomla-3.x/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer">GNU GPL v2 or later</a>. Original Joomla! code: Copyright © 2005 - 2025 <a href="https://www.opensourcematters.org" target="_blank" rel="noopener noreferrer">Open Source Matters, Inc.</a> Modifications: Copyright © 2026 <a href="https://www.joomlaworks.net" target="_blank" rel="noopener noreferrer">JoomlaWorks Ltd.</a> and this project's contributors.</span>
+            </div>
         </div>
-      </article>
-      <article class="rel">
-        <div class="when"><b>v3.16</b>October 3, 2026</div>
-        <div>
-          <h3>Little WAF, a smarter Joomla Update, and a big deprecation sweep</h3>
-          <p>Backported security fixes from Joomla 6.1/5.4, the opt-in Little WAF plugin, Joomla Update that respects uninstalled core extensions, and PHP 8.1–8.5 deprecations swept from 805 files.</p>
-        </div>
-      </article>
-      <article class="rel">
-        <div class="when"><b>v3.15</b>July 18, 2026</div>
-        <div>
-          <h3>13 CVE backports, module caching that finally respects your settings</h3>
-          <p>13 CVE backports, module caching that finally respects Global Configuration, a custom cache time option on 26 core modules, and PHP 7.1–7.3 sites kept on the update channel.</p>
-        </div>
-      </article>
-      <article class="rel">
-        <div class="when"><b>v3.14</b>July 4, 2026</div>
-        <div>
-          <h3>PHP 8.5 deprecation fixes</h3>
-          <p>PHP 8.5 deprecation fixes, and language file versions in line with the main version.</p>
-        </div>
-      </article>
-      <article class="rel">
-        <div class="when"><b>v3.13</b>May 31, 2026</div>
-        <div>
-          <h3>A tidier Isis admin</h3>
-          <p>CSS view transitions in the Isis administrator template, obsolete CSS removed, and further PHP 8.x fixes.</p>
-        </div>
-      </article>
-      <article class="rel">
-        <div class="when"><b>v3.12</b>May 21, 2026</div>
-        <div>
-          <h3>Built-in update server</h3>
-          <p>Updates delivered through the Joomla backend updater, legacy extensions removed, and more security patches from Joomla 4/5/6.</p>
-        </div>
-      </article>
-      <article class="rel">
-        <div class="when"><b>v3.11</b>April 20, 2026</div>
-        <div>
-          <h3>PHP 8.5 and the first CVE backports</h3>
-          <p>PHP up to 8.5, better MySQL 8.x support, and the first backported CVE fixes after Joomla 3.10.20 eLTS.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+    </footer>
 
-<section id="security" class="sec-line">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// security</span>
-        <h2>Security fixes, backported as they land</h2>
-        <p class="lead">Every official Joomla security release is reviewed against this codebase. When the vulnerable code exists in 3.x, it gets fixed here — including issues listed upstream as affecting only Joomla 4.0 and later. And we audit 3.x ourselves: most of v3.17's 22 fixes were in stock Joomla 3 all along.</p>
-      </div>
-      <a class="more" href="https://github.com/joomlaworks/joomla-3.x/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Detailed changelog →</a>
-    </div>
-    <div class="cves" id="cves">
-      <div class="cve"><span class="v">v3.17</span><span>Crafted packages could write files outside the site's folders, through Joomla Update's extraction, the extension installer or the archive code; such packages are now refused as a whole</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>Anyone could run the installer again on an installed site while the <code>installation</code> folder remained; now only the browser that installed the site can go on</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>The configuration writer could put PHP code into <code>configuration.php</code> through a crafted setting name</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>The installer's ownership check for remote databases could be skipped by going straight to the step that writes the configuration</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span>MySQL (PDO) and PostgreSQL drivers ran several SQL statements given at once; every driver now runs one, like "mysqli"</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve"><span class="v">v3.17</span><span><code>{loadmoduleid}</code> showed any module to anyone, whatever its access level or publishing dates</span><span class="id">Since 3.12</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Setting the Super User's group in the installer could put every user into the Super Users group when the mapping already existed</span><span class="id">Installer</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>The module edit form's ordering list could be read by anyone, listing the titles of the modules in any position</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>FOF's download class read local files (<code>file://</code>) and could write outside the temporary folder</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Query limits and offsets were written into the SQL as passed, on every database driver</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>PostgreSQL connection settings weren't quoted, and the PDO drivers accepted connection settings that could add settings of their own</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Usernames differing only in case could be registered on PostgreSQL</span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Joomla Update showed the update feed's values unescaped; Install from URL and Install from Web accepted download addresses other than <code>http</code>/<code>https</code></span><span class="id">Stock Joomla 3</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Little WAF now also checks form data and encoded spellings of the tags, and works on servers without <code>REQUEST_URI</code></span><span class="id">Joomla 3.x UTD</span></div>
-      <div class="cve cve-more"><span class="v">v3.17</span><span>Command line: <code>database:convert</code>'s temporary copy and the backup folders' intermediate levels are now protected from the web</span><span class="id">Joomla 3.x UTD</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Guest account creation via the frontend profile-save action, even with user registration disabled</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Arbitrary directory deletion through a path traversal in the file cache's group handling</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Two XSS-filter bypasses using HTML5 entities and unterminated numeric references</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>SSRF: feed, SEF-domain, user-profile website and custom update URL fields restricted to web URL schemes</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Tagged items in access-restricted categories leaking through tag views and the "Tags - Popular"/"Tags - Similar" modules</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>HTTP header injection via an unescaped filename in the banner-tracking download and the contact vCard export</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>XSS gaps in <code>JHtml::link()</code>/<code>JHtml::iframe()</code>, the module manager's position column, the toolbar link button and the generic image layout's attribute names</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Stored XSS: contact name/position/category echoed unescaped into public-facing schema.org markup</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>Missing per-item edit-permission checks in the category and custom-field batch-copy actions</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>A missing access check on the second record of a content history comparison</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.16</span><span>A missing SHTML file extension in the Template Manager's upload blacklist</span><span class="id">Joomla 6.1 / 5.4</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Local file inclusion (LFI) via the view layout parameter</span><span class="id">CVE-2026-40383</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>SQL injection in the com_tags "all tags" list ordering</span><span class="id">CVE-2026-352212</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Privilege-escalation XSS via language overrides by non-Super-Users with delegated translation access</span><span class="id">CVE-2026-48954</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>XSS in the template manager's file/image/font editor — three code paths fixed where the official fix covered one</span><span class="id">CVE-2026-48950</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Unescaped attribute output in the generic image layout used by extensions</span><span class="id">CVE-2026-48953</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Reflected XSS in the com_installer update list view</span><span class="id">CVE-2026-48952</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Stored XSS in the content history preview screen</span><span class="id">CVE-2026-30894</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Password/username reset links sent over plain HTTP even on HTTPS-only sites</span><span class="id">CVE-2026-48902</span></div>
-      <div class="cve cve-more"><span class="v">v3.15</span><span>Access-control bypass allowing anyone to download restricted contacts' vCards in com_contact</span><span class="id">CVE-2026-48948</span></div>
-      <button class="cve-toggle" id="cveToggle" aria-expanded="false">Show more →</button>
-    </div>
-    <div class="callout">
-      <p><b>Little WAF.</b> An opt-in system plugin (since v3.16) that filters known attack signatures against abandoned or historically vulnerable third-party extensions before any component runs, with filters for Sourcerer-style <code>{source}</code> URL injection and Modules Anywhere-style <code>{module}</code>/<code>{modulepos}</code> tags. Since v3.17 it also checks form data and encoded spellings, and each filter only acts while its extension is installed. Disabled by default; more filters will be added over time.</p>
-    </div>
-    <p class="sec-note">Advisories that don't apply — because the vulnerable feature doesn't exist in 3.x — and issues already covered by earlier hardening are documented in the changelog as well.</p>
-  </div>
-</section>
+    <dialog class="viewer" id="viewer" aria-label="Screenshot">
+        <button type="button" id="viewerClose" aria-label="Close">×</button>
+        <img id="viewerImg" src="" alt="">
+        <p id="viewerCaption"></p>
+    </dialog>
 
-<!-- Testimonials: hidden until there are real ones (remove "hidden" to show the section) -->
-<section id="voices" class="sec-line" hidden>
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">// voices</span>
-        <h2>From the people running it</h2>
-        <p class="lead">Site owners, agencies and hosts on moving their Joomla 3.x sites to UTD.</p>
-      </div>
-      <span class="ph">placeholder content</span>
-    </div>
-    <div class="voices">
-      <div class="voice"><div class="who"><span class="avatar">IMG</span><span><b>Name Surname</b>Agency · 40 client sites</span></div><p>Testimonial from an agency about upgrading client sites in place, and what it saved compared to a full migration.</p></div>
-      <div class="voice"><div class="who"><span class="avatar">IMG</span><span><b>Name Surname</b>Hosting provider</span></div><p>Testimonial from a hosting company about finally retiring old PHP versions and servers across their fleet.</p></div>
-      <div class="voice"><div class="who"><span class="avatar">IMG</span><span><b>Name Surname</b>Site owner</span></div><p>Short testimonial from a small site owner on how simple the backend update was.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="roadmap" class="sec-line">
-  <div class="wrap">
-    <span class="eyebrow">// long-term plan · a different project</span>
-    <h2>A leaner fork is on the way</h2>
-    <p class="lead">A new fork based on Joomla 3.x is a work in progress — but very, very active. When released, it will feature:</p>
-    <div class="road">
-      <div><span class="k">01 · core</span><h3>Stripped down</h3><p>Joomla 3.x with all non-essential extensions removed.</p></div>
-      <div><span class="k">02 · php</span><h3>PHP 7.4 → 8.x</h3><p>Fully compatible with PHP versions from 7.4 to 8.x and so on.</p></div>
-      <div><span class="k">03 · database</span><h3>First-class databases</h3><p>First-class support for MySQL, MariaDB, PostgreSQL and SQLite. The SQL Server and Azure SQL drivers will be dropped.</p></div>
-      <div><span class="k">04 · content</span><h3>K2 for content</h3><p>com_content and anything related is removed entirely, decoupling content features from a solid CMS base that keeps true backwards compatibility with past releases of the fork.</p></div>
-      <div><span class="k">05 · admin</span><h3>Admin refresh</h3><p>A refreshed administrator experience.</p></div>
-      <div><span class="k">06 · js</span><h3>Modern JS only</h3><p>Gradual jQuery/MooTools removal.</p></div>
-      <div><span class="k">07 · future</span><h3>Built to last</h3><p>Gradual codebase modernization to support future PHP &amp; MySQL/MariaDB versions without much effort.</p></div>
-      <div><span class="k">08 · agentic</span><h3>A truly agentic CMS</h3><p>AI agents working alongside editors, developers and site owners. The command line and MCP server of Joomla 3.x UTD are the seed: the integrations to come grow from them.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="community" class="sec-line">
-  <div class="wrap">
-    <span class="eyebrow">// community</span>
-    <h2>Get involved</h2>
-    <p class="lead">This is a community effort. Report bugs, contribute fixes, or ask the codebase directly.</p>
-    <div class="comm">
-      <a href="https://github.com/joomlaworks/joomla-3.x/discussions" target="_blank" rel="noopener noreferrer"><h3>Discuss</h3><p>Report bugs with this distribution — including functional bugs in any existing Joomla 3.x feature.</p><span class="go">Open discussions →</span></a>
-      <a href="https://github.com/joomlaworks/joomla-3.x/issues" target="_blank" rel="noopener noreferrer"><h3>Contribute</h3><p>Meaningful upgrades to existing functionality or bug fixes — open an issue.</p><span class="go">Open an issue →</span></a>
-      <a href="https://deepwiki.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer"><h3>DeepWiki</h3><p>Ask, search or chat with the codebase. Powered by Devin.</p><span class="go">Ask DeepWiki →</span></a>
-      <a href="https://zread.ai/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer"><h3>Zread</h3><p>Ask, search or chat with the codebase. Powered by Z.ai/GLM.</p><span class="go">Ask Zread →</span></a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="mark" href="#top" aria-label="Joomla 3.x UTD home"><svg class="logo" viewBox="0 0 350 100" aria-hidden="true"><g font-family="Geist, 'Inter Tight', system-ui, sans-serif" font-weight="700" font-size="66" letter-spacing="-2" fill="currentColor"><text x="2" y="74">J3</text><text x="200" y="74">UTD</text></g><g stroke-width="16" stroke-linecap="round" fill="none"><path d="M130 40 100 10" stroke="#5091cd"/><path d="M150 40 180 10" stroke="#7ac143"/><path d="M150 60 180 90" stroke="#f9a541"/><path d="M130 60 100 90" stroke="#f44321"/></g></svg></a>
-        <p>An up-to-date distribution of Joomla 3.x: secure, current &amp; still yours.</p>
-      </div>
-      <div><h4>Get it</h4><ul>
-        <li><a href="https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip" target="_blank" rel="noopener noreferrer">Download</a></li>
-        <li><a href="#install">Install &amp; upgrade</a></li>
-        <li><a href="#templates">Templates</a></li>
-        <li><a href="#demos">Live demos</a></li>
-        <li><a href="#compat">Compatibility</a></li>
-        <li><a href="#database">Databases</a></li>
-      </ul></div>
-      <div><h4>Project</h4><ul>
-        <li><a href="#new">What's new</a></li>
-        <li><a href="#changelog">Changelog</a></li>
-        <li><a href="#security">Security</a></li>
-        <li><a href="#agents">CLI &amp; AI</a></li>
-        <li><a href="https://github.com/joomlaworks/joomla-3.x/blob/main/AI-GUIDE.md" target="_blank" rel="noopener noreferrer">AI &amp; CLI guide</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="https://github.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      </ul></div>
-      <div><h4>Community</h4><ul>
-        <li><a href="https://github.com/joomlaworks/joomla-3.x/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
-        <li><a href="https://github.com/joomlaworks/joomla-3.x/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
-        <li><a href="https://deepwiki.com/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">DeepWiki</a></li>
-        <li><a href="https://zread.ai/joomlaworks/joomla-3.x" target="_blank" rel="noopener noreferrer">Zread</a></li>
-      </ul></div>
-    </div>
-    <div class="legal">
-      <span>Joomla 3.x UTD is an independent community project. It is not affiliated with, endorsed by, or supported by Open Source Matters, Inc. or The Joomla! Project™. The Joomla!® name and logo are trademarks of Open Source Matters, Inc. in the United States and other countries. This project does not use the Joomla! logo.</span>
-      <span>Free software, released under the <a href="https://github.com/joomlaworks/joomla-3.x/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer">GNU GPL v2 or later</a>. Original Joomla! code: Copyright © 2005 - 2025 <a href="https://www.opensourcematters.org" target="_blank" rel="noopener noreferrer">Open Source Matters, Inc.</a> Modifications: Copyright © 2026 <a href="https://www.joomlaworks.net" target="_blank" rel="noopener noreferrer">JoomlaWorks Ltd.</a> and this project's contributors.</span>
-    </div>
-  </div>
-</footer>
-
-<dialog class="viewer" id="viewer" aria-label="Screenshot">
-  <button type="button" id="viewerClose" aria-label="Close">×</button>
-  <img id="viewerImg" src="" alt="">
-  <p id="viewerCaption"></p>
-</dialog>
-
-<script src="assets/js/site.js?t=20261010_0716" defer></script>
+    <script src="assets/js/site.js?t=20261010_0716" defer></script>
 </body>
+
 </html>
