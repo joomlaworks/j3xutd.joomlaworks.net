@@ -68,7 +68,9 @@
   // The terminal: a new site from the command line (real output of core:install), or an upgrade in place
   var SCRIPTS=[
     {title:"~/sites/new-site — install",lines:[
+      {o:'<span class="cm"># a new site: download and unpack in an empty folder (the installation/ folder stays, the installer needs it)</span>'},
       {c:"wget -q https://github.com/joomlaworks/joomla-3.x/releases/download/rolling/joomla-latest.zip && unzip -q joomla-latest.zip && rm joomla-latest.zip"},
+      {o:'<span class="cm"># then open the site in a browser to install it, or install it right here, on SQLite, with a sample data set:</span>'},
       {c:'php cli/joomla.php core:install --site-name="Rookwood Studio" --admin-email=me@example.com --admin-username=admin --sample-data=studio'},
       {o:'<span class="hd">Install Joomla</span>'},
       {o:'Creating the database ...'},
@@ -77,13 +79,14 @@
       {o:'Writing the configuration and creating the Super User ...'},
       {o:'<span class="ok">[OK]</span> Joomla is installed: "Rookwood Studio", on the SQLite database database/joomla-27f507ef3c75de8c.sqlite.'},
       {o:'Administrator  admin\nPassword       ••••••••••••••••'},
-      {o:'<span class="cm"># 1.4 seconds, sample data included. No database server needed.</span>'},
+      {o:'<span class="cm"># 1.4 seconds, sample data included, installation/ removed. No database server needed.</span>'},
       {c:"php cli/joomla.php site:health"},
       {o:'<span class="ok">[OK]</span> 12 ok, 5 info, 0 warning(s), 0 error(s).'},
       {c:"claude mcp add joomla -- php $PWD/cli/joomla.php mcp:serve"},
       {o:'<span class="cm"># your AI assistant can now read (and, with --allow-write, change) the site</span>'}
     ]},
     {title:"~/sites/example.com — upgrade",lines:[
+      {o:'<span class="cm"># an existing Joomla 3.x site: unpack the new files over it (installation/ isn’t needed there, so it’s removed)</span>'},
       {c:"cd /var/www/example.com"},
       {c:"wget -qO- https://github.com/joomlaworks/joomla-3.x/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1 && rm -rf installation .github .gitignore *.md"},
       {o:'<span class="cm"># the new files are in place, over the existing Joomla 3.x site</span>'},
@@ -99,7 +102,8 @@
   var term=document.getElementById("term"),termTitle=document.getElementById("termTitle"),tabs=document.querySelectorAll(".term-tabs button");
   var cur=0,html="",li=0,timer=null,run=0;
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
-  function render(extra){term.innerHTML=html+(extra||"")+'<span class="cursor"></span>'}
+  // As a terminal does, keep the newest line in view
+  function render(extra){term.innerHTML=html+(extra||"")+'<span class="cursor"></span>';term.scrollTop=term.scrollHeight}
   function show(n){
     cur=n;html="";li=0;run++;clearTimeout(timer);
     termTitle.textContent=SCRIPTS[n].title;
