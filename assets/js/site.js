@@ -37,6 +37,15 @@
     menuBtn.addEventListener("click", function () { menuBtn.setAttribute("aria-expanded", nav.classList.toggle("open")) });
     nav.querySelectorAll(".nav-links a").forEach(function (a) { a.addEventListener("click", function () { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false") }) });
 
+    // The logo links: back to the very top like a link home, without "#top" (or an earlier anchor) in the address bar
+    document.querySelectorAll('a[href="#top"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+            if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+        });
+    });
+
     var cves = document.getElementById("cves"), tog = document.getElementById("cveToggle");
     tog.addEventListener("click", function () { var o = cves.classList.toggle("open"); tog.textContent = o ? "Show fewer ↑" : "Show more →"; tog.setAttribute("aria-expanded", o) });
 
