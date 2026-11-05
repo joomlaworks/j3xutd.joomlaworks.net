@@ -137,6 +137,29 @@ h3{font-size:20px;letter-spacing:-.01em;font-weight:600;line-height:1.25}
 a.zoom{display:block;color:inherit;cursor:zoom-in}
 a.zoom:hover{text-decoration:none}
 
+/* carousels */
+.carousel{position:relative;min-width:0}
+.car-viewport{overflow:hidden;padding-bottom:48px;margin-bottom:-48px}
+.car-track{display:flex;touch-action:pan-y;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.car-track.is-dragging{transition:none}
+.car-slide{flex:0 0 100%;min-width:0;padding:0 1px;opacity:.35;transition:opacity .6s ease}
+.car-slide.is-active{opacity:1}
+.car-slide figcaption{margin-top:14px;font-family:"Geist Mono",monospace;font-size:12.5px;color:var(--faint);text-align:center;text-wrap:balance}
+.carousel:not(.is-ready) .car-viewport{overflow-x:auto;scroll-snap-type:x mandatory}
+.carousel:not(.is-ready) .car-slide{opacity:1;scroll-snap-align:start}
+.car-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
+.car-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;display:grid;place-items:center;font-size:17px;line-height:1;transition:border-color .2s ease,color .2s ease}
+.car-btn:hover{border-color:var(--accent);color:var(--accent)}
+.car-btn:focus-visible,.car-dot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.car-dots{display:flex;gap:8px}
+.car-dot{width:8px;height:8px;border-radius:4px;border:0;padding:0;background:var(--line);cursor:pointer;transition:width .35s ease,background .35s ease}
+.car-dot[aria-current="true"]{width:22px;background:var(--accent)}
+@media(min-width:981px){.shows .tpl{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}.shows .tpl:nth-child(even){grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.shows .tpl:first-child{padding-top:40px}
+.shows .tpl h3{font-size:clamp(26px,3vw,36px)}
+#since .carousel{margin-top:40px}
+.feats-since{margin-top:56px}
+
 /* templates */
 .tpls{margin-top:24px}
 .tpl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:64px;align-items:center;padding:72px 0;border-bottom:1px solid var(--line)}

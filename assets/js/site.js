@@ -49,6 +49,70 @@
     var cves = document.getElementById("cves"), tog = document.getElementById("cveToggle");
     tog.addEventListener("click", function () { var o = cves.classList.toggle("open"); tog.textContent = o ? "Show fewer ↑" : "Show more →"; tog.setAttribute("aria-expanded", o) });
 
+    // Carousels: one screenshot at a time, moved with the arrows, the dots, a swipe or the arrow keys (without JavaScript, a row to scroll)
+    document.querySelectorAll("[data-carousel]").forEach(function (box) {
+        var track = box.querySelector(".car-track"), slides = Array.prototype.slice.call(track.children), n = slides.length, cur = 0;
+        if (n < 2) return;
+        var nav = document.createElement("div"), dots = document.createElement("div");
+        nav.className = "car-nav"; dots.className = "car-dots";
+        function button(cls, label, text) {
+            var b = document.createElement("button");
+            b.type = "button"; b.className = cls; b.setAttribute("aria-label", label); b.textContent = text;
+            return b;
+        }
+        var prev = button("car-btn", "Previous screenshot", "←"), next = button("car-btn", "Next screenshot", "→");
+        var dotList = slides.map(function (s, i) {
+            var d = button("car-dot", "Screenshot " + (i + 1) + " of " + n, "");
+            d.addEventListener("click", function () { go(i) });
+            dots.appendChild(d);
+            return d;
+        });
+        nav.appendChild(prev); nav.appendChild(dots); nav.appendChild(next);
+        box.appendChild(nav);
+        var live = box.querySelector(".car-viewport");
+        live.setAttribute("aria-live", "polite");
+        function go(i) {
+            cur = (i + n) % n;
+            track.style.transform = "translateX(" + (-100 * cur) + "%)";
+            slides.forEach(function (s, k) {
+                s.classList.toggle("is-active", k === cur);
+                s.setAttribute("aria-hidden", k === cur ? "false" : "true");
+                var a = s.querySelector("a");
+                if (a) a.tabIndex = k === cur ? 0 : -1;
+            });
+            dotList.forEach(function (d, k) { d.setAttribute("aria-current", k === cur ? "true" : "false") });
+        }
+        prev.addEventListener("click", function () { go(cur - 1) });
+        next.addEventListener("click", function () { go(cur + 1) });
+        box.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1) }
+            else if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1) }
+        });
+        // A swipe follows the finger; a click that ended a swipe doesn't open the screenshot
+        var startX = null, dx = 0, moved = false;
+        track.addEventListener("pointerdown", function (e) {
+            if (e.pointerType === "mouse" && e.button !== 0) return;
+            startX = e.clientX; dx = 0; moved = false;
+        });
+        track.addEventListener("pointermove", function (e) {
+            if (startX === null) return;
+            dx = e.clientX - startX;
+            if (!moved && Math.abs(dx) > 8) { moved = true; track.classList.add("is-dragging"); track.setPointerCapture(e.pointerId) }
+            if (moved) track.style.transform = "translateX(calc(" + (-100 * cur) + "% + " + dx + "px))";
+        });
+        function end() {
+            if (startX === null) return;
+            startX = null; track.classList.remove("is-dragging");
+            if (moved && Math.abs(dx) > track.offsetWidth / 6) go(dx < 0 ? cur + 1 : cur - 1); else go(cur);
+        }
+        track.addEventListener("pointerup", end);
+        track.addEventListener("pointercancel", end);
+        track.addEventListener("click", function (e) { if (moved) { e.preventDefault(); e.stopImmediatePropagation(); moved = false } }, true);
+        track.addEventListener("dragstart", function (e) { e.preventDefault() });
+        box.classList.add("is-ready");
+        go(0);
+    });
+
     // Screenshots: open the full size in a dialog (a plain link to the image without JavaScript)
     var viewer = document.getElementById("viewer"), vImg = document.getElementById("viewerImg"), vCap = document.getElementById("viewerCaption");
     if (viewer.showModal) {
