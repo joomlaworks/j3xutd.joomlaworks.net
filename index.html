@@ -219,33 +219,42 @@
                         <ul>
                             <li><b>Markdown (EasyMDE):</b> a preview, side by side, drag and drop uploads</li>
                             <li><b>Blocks (Editor.js):</b> headings, images, embeds, tables, code; templates add blocks of their own, with a desktop, tablet and phone preview</li>
+                            <li><b>Drag and drop images</b> into TinyMCE 8, TinyMCE (legacy) and Markdown: uploaded at once, turned upright and saved as WebP without metadata, and with the Media Manager's resizing on, capped in width with a copy for phones, both written into the image's <code>srcset</code></li>
                             <li><b>PDF files:</b> a viewer on the site, and a new PDF button in every editor that picks or uploads the file and inserts it with a preview</li>
                         </ul>
                     </div>
                     <div class="carousel" data-carousel="data-carousel" role="region" aria-roledescription="carousel" aria-label="Editor screenshots">
                         <div class="car-viewport">
                             <div class="car-track">
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="1 of 8">
                                     <a class="zoom browser" href="assets/shots/editor-switcher.webp" data-caption="The editor switcher"><img src="assets/shots/editor-switcher.webp" width="1440" height="900" alt="Switching an article between TinyMCE, TinyMCE (legacy), Markdown and Blocks" loading="lazy" decoding="async" /></a>
                                     <figcaption>The editor switcher</figcaption>
                                 </figure>
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="2 of 8">
                                     <a class="zoom browser" href="assets/shots/editor-easymde.webp" data-caption="Markdown (EasyMDE), side by side"><img src="assets/shots/editor-easymde.webp" width="1440" height="900" alt="An article in the Markdown editor with the preview beside it" loading="lazy" decoding="async" /></a>
                                     <figcaption>Markdown (EasyMDE), side by side</figcaption>
                                 </figure>
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="3 of 8">
                                     <a class="zoom browser" href="assets/shots/editor-blocks.webp" data-caption="Blocks (Editor.js)"><img src="assets/shots/editor-blocks.webp" width="1440" height="900" alt="An article written as blocks" loading="lazy" decoding="async" /></a>
                                     <figcaption>Blocks (Editor.js)</figcaption>
                                 </figure>
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="4 of 8">
                                     <a class="zoom browser" href="assets/shots/editor-blocks-preview.webp" data-caption="Blocks — preview with the site template"><img src="assets/shots/editor-blocks-preview.webp" width="1440" height="900" alt="The Blocks editor's preview, rendered with the site's template" loading="lazy" decoding="async" /></a>
                                     <figcaption>Blocks — preview with the site template</figcaption>
                                 </figure>
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
+                            <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="5 of 8">
+                                <a class="zoom browser" href="assets/shots/drop-editor.webp" data-caption="Drag and drop into TinyMCE 8"><img src="assets/shots/drop-editor.webp" width="1440" height="900" alt="An image dragged from the desktop into TinyMCE 8, uploaded and inserted" loading="lazy" decoding="async" /></a>
+                                <figcaption>Drag and drop into TinyMCE 8</figcaption>
+                            </figure>
+                            <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="6 of 8">
+                                <a class="zoom browser" href="assets/shots/editor-srcset.webp" data-caption="The srcset the editor writes"><img src="assets/shots/editor-srcset.webp" width="1440" height="900" alt="The article's HTML: the dropped image as WebP with its phone-sized copy in srcset and sizes" loading="lazy" decoding="async" /></a>
+                                <figcaption>The srcset the editor writes</figcaption>
+                            </figure>
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="7 of 8">
                                     <a class="zoom browser" href="assets/shots/pdf-button.webp" data-caption="The PDF button"><img src="assets/shots/pdf-button.webp" width="1440" height="900" alt="The PDF button's picker in the editor: the site's PDF files, a link or an upload" loading="lazy" decoding="async" /></a>
                                     <figcaption>The PDF button</figcaption>
                                 </figure>
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="8 of 8">
                                     <a class="zoom browser" href="assets/shots/site-pdf.webp" data-caption="A PDF file in an article"><img src="assets/shots/site-pdf.webp" width="1440" height="900" alt="A three-page PDF shown in a viewer inside an article" loading="lazy" decoding="async" /></a>
                                     <figcaption>A PDF file in an article</figcaption>
                                 </figure>
@@ -288,24 +297,59 @@
                             <li>Drag and drop uploads, also in the image picker</li>
                             <li>Cropping, free or 21:9 to 1:1, as a new file or over the original</li>
                             <li>Large previews of images (with the arrow keys), audio, video and PDF files</li>
+                            <li>Image optimisation in its Options: WebP, quality, upload folders by date, a maximum width and copies for small screens</li>
                             <li>Editor uploads turned upright, saved as WebP and stripped of their metadata; uploads up to 128 MB</li>
                         </ul>
                     </div>
                     <div class="carousel" data-carousel="data-carousel" role="region" aria-roledescription="carousel" aria-label="Media Manager screenshots">
                         <div class="car-viewport">
                             <div class="car-track">
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
                                     <a class="zoom browser" href="assets/shots/media-tiles.webp" data-caption="Square thumbnails"><img src="assets/shots/media-tiles.webp" width="1440" height="900" alt="The Media Manager with square thumbnails, a size control and a folder tree" loading="lazy" decoding="async" /></a>
                                     <figcaption>Square thumbnails</figcaption>
                                 </figure>
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
                                     <a class="zoom browser" href="assets/shots/media-preview.webp" data-caption="Large previews"><img src="assets/shots/media-preview.webp" width="1440" height="900" alt="A large preview of an image, with arrows to the previous and next ones" loading="lazy" decoding="async" /></a>
                                     <figcaption>Large previews</figcaption>
                                 </figure>
-                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                                <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
                                     <a class="zoom browser" href="assets/shots/media-crop.webp" data-caption="Cropping"><img src="assets/shots/media-crop.webp" width="1440" height="900" alt="Cropping an image: free or 21:9 to 1:1, saved as a new file or over the original" loading="lazy" decoding="async" /></a>
                                     <figcaption>Cropping</figcaption>
                                 </figure>
+                            <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+                                <a class="zoom browser" href="assets/shots/media-settings.webp" data-caption="Image optimisation settings"><img src="assets/shots/media-settings.webp" width="1440" height="900" alt="The Media Manager's Image Optimisation and Resizing options" loading="lazy" decoding="async" /></a>
+                                <figcaption>Image optimisation settings</figcaption>
+                            </figure>
+                            <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+                                <a class="zoom browser" href="assets/shots/media-copies.webp" data-caption="Each image with its phone copy"><img src="assets/shots/media-copies.webp" width="1440" height="900" alt="A folder of uploads: each image beside its 600 pixel copy for small screens" loading="lazy" decoding="async" /></a>
+                                <figcaption>Each image with its phone copy</figcaption>
+                            </figure>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tpl show">
+                    <div class="tpl-text">
+                        <span class="kind">drag and drop</span>
+                        <h3>Drop files in, wherever you are</h3>
+                        <p>Drag images and files from your desktop straight into the Media Manager's folder, or into the image picker an editor opens: they upload two at a time, and the list reloads with them in it.</p>
+                        <ul>
+                            <li>The picker selects a single dropped image, ready to insert</li>
+                            <li>The folder you're looking at is where files go</li>
+                            <li>With optimisation on, each image is saved as WebP, capped in width and given a copy for phones</li>
+                        </ul>
+                    </div>
+                    <div class="carousel" data-carousel="data-carousel" role="region" aria-roledescription="carousel" aria-label="Drag and drop screenshots">
+                        <div class="car-viewport">
+                            <div class="car-track">
+                            <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
+                                <a class="zoom browser" href="assets/shots/drop-manager.webp" data-caption="Drag and drop into a Media Manager folder"><img src="assets/shots/drop-manager.webp" width="1440" height="900" alt="An image dragged into a Media Manager folder, uploaded with its phone copy" loading="lazy" decoding="async" /></a>
+                                <figcaption>Drag and drop into a Media Manager folder</figcaption>
+                            </figure>
+                            <figure class="car-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
+                                <a class="zoom browser" href="assets/shots/drop-picker.webp" data-caption="Drag and drop into the image picker"><img src="assets/shots/drop-picker.webp" width="1440" height="900" alt="An image dragged into the editor's image picker, uploaded and selected" loading="lazy" decoding="async" /></a>
+                                <figcaption>Drag and drop into the image picker</figcaption>
+                            </figure>
                             </div>
                         </div>
                     </div>
