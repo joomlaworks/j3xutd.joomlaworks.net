@@ -38,7 +38,8 @@ code,pre,.mono{font-family:"Geist Mono",ui-monospace,monospace}
 .btn-p{background:var(--accent);color:var(--on-accent)}
 .btn-g{border-color:var(--line);color:var(--text);background:transparent}
 .btn-g:hover{border-color:var(--accent)}
-.btn-sm{padding:7px 14px;font-size:14px;border-radius:8px}
+.btn-sm{padding:7px 14px;font-size:14px;border-radius:8px;white-space:nowrap}
+@media (max-width:359px){.nav-in{gap:8px}.nav-right{gap:2px}.mark .logo{height:24px}.btn-sm{padding:7px 9px;font-size:13px}.icon-btn{width:32px}}
 .menu-btn{display:none}
 @media(max-width:1180px){.nav-in{gap:20px}.nav-links{gap:16px}}
 @media(max-width:1080px){
