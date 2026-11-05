@@ -161,14 +161,31 @@ a.zoom:hover{text-decoration:none}
 .feats-since{margin-top:56px}
 
 /* logo clouds */
-.logo-cloud{display:flex;flex-wrap:wrap;gap:12px;align-content:center;min-width:0}
-.logo-tag{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--panel);border:1px solid var(--line);border-radius:999px;font-size:15px;transition:border-color .25s ease,transform .25s ease}
-.logo-tag:hover{border-color:var(--accent);transform:translateY(-2px)}
-.logo-tag img{height:26px;width:auto;flex:none;background:#fff;border-radius:6px;padding:4px}
-.logo-tag img.wide{height:26px;max-width:120px}
-.logo-tag b{font-weight:600}
-.logo-tag small{font-family:"Geist Mono",monospace;font-size:11.5px;color:var(--faint)}
-.logo-shot{flex:1 1 100%;margin-top:12px}
+.tpl .logo-cloud{grid-column:1/-1;list-style:none;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:18px 24px;margin-top:8px;padding:28px 0 12px}
+.tpl .logo-cloud li{padding-left:0;color:var(--text);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;animation:cloudfloat 7s ease-in-out infinite}
+.logo-cloud li:nth-child(2){animation-delay:-1.4s}
+.logo-cloud li:nth-child(3){animation-delay:-2.8s}
+.logo-cloud li:nth-child(4){animation-delay:-4.2s}
+.logo-cloud li:nth-child(5){animation-delay:-5.6s}
+.logo-cloud .cl-up{margin-top:0}
+.tpl .logo-cloud .cl-s{width:160px}
+.tpl .logo-cloud .cl-m{width:200px}
+.tpl .logo-cloud .cl-l{width:280px}
+.logo-cloud .cl-m{margin-top:34px}
+.logo-cloud .cl-down{margin-top:62px}
+.cl-plate{display:grid;place-items:center;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 50px -30px var(--shadow);transition:transform .3s ease}
+.logo-cloud li:hover .cl-plate{transform:scale(1.05)}
+.cl-s .cl-plate{width:96px;height:96px}
+.cl-s .cl-plate img{width:56px;height:56px}
+.cl-m .cl-plate{width:200px;height:96px;padding:0 24px}
+.cl-m .cl-plate img{width:100%;height:auto;max-height:52px}
+.cl-l .cl-plate{width:280px;height:112px;padding:0 28px}
+.cl-l .cl-plate img{width:100%;height:auto}
+.logo-cloud b{font-size:15.5px;font-weight:600;margin-top:6px}
+.logo-cloud small{font-family:"Geist Mono",monospace;font-size:12px;color:var(--faint)}
+.tpl .logo-cloud li::before{content:none}
+@keyframes cloudfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(max-width:760px){.tpl .logo-cloud{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.logo-cloud .cl-m,.logo-cloud .cl-down{margin-top:0}.tpl .logo-cloud li.cl-s,.tpl .logo-cloud li.cl-m,.tpl .logo-cloud li.cl-l{width:auto;min-width:0}.logo-cloud .cl-l{grid-column:1/-1}.cl-m .cl-plate,.cl-l .cl-plate{width:100%;max-width:280px}.cl-s .cl-plate{width:96px}}
 .db-logos{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:40px 0 28px}
 .db-logos li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:22px 12px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
 .db-plate{display:grid;place-items:center;width:64px;height:64px;border-radius:16px;background:#fff;box-shadow:0 10px 26px -14px var(--shadow)}
